@@ -2,9 +2,9 @@ CS 555
 Team 4
 
 Member Names:
-Himabindu  Chaturvedula      hchaturv@Worcester.edu
-Stanislav  Grozny            sgrozny@Worcester.edu
-Li 	   Zhang    	     lzhang40@Worcester.edu
+Himabindu  Chaturvedula      hchaturv@stevens.edu
+Stanislav  Grozny            sgrozny@stevens.edu
+Le 	   Zhang    	     lzhang40@stevens.edu
 
 Language:
 
