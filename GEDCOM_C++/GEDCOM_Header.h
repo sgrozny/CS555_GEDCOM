@@ -23,6 +23,9 @@ struct individual{
 };
 struct family{
     char* famID;
+    struct individual husb;
+    char* wife;
+    char* children;
 } ;
 
      void Read_Ged_File();
