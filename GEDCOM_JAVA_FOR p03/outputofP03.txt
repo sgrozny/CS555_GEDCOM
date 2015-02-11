@@ -1,0 +1,38 @@
+Individuals:
+@I1@ :  Ivan Vasilievich
+@I2@ :  Sergey Vasilievich
+@I3@ :  Lena Petrov
+@I4@ :  Ilya Petrov
+@I5@ :  Rita Vovk
+@I6@ :  Dmitriy Vasilievich
+@I7@ :  Luba Piskunov
+@I8@ :  Alexander Romanov
+@I9@ :  Vladimir Romanov
+@I10@ :  Igor Vasilievich
+@I11@ :  Katya Vasilievich
+@I12@ :  Dmitriy Romanov
+@I13@ :  Yulia Vasilievich
+@I14@ :  Yuri Vasilievich
+@I15@ :  Luba Vasilievich
+------------------------------
+Families
+Family ID:@F1@
+Husband: Ivan Vasilievich
+Wife: Yulia Vasilievich
+~~~~~~~~~~~~~~~~~
+Family ID:@F2@
+Husband: Sergey Vasilievich
+Wife: Lena Petrov
+~~~~~~~~~~~~~~~~~
+Family ID:@F3@
+Husband: Dmitriy Vasilievich
+Wife: Luba Piskunov
+~~~~~~~~~~~~~~~~~
+Family ID:@F4@
+Husband: Ilya Petrov
+Wife: Rita Vovk
+~~~~~~~~~~~~~~~~~
+Family ID:@F5@
+Husband: Alexander Romanov
+Wife: Luba Piskunov
+~~~~~~~~~~~~~~~~~
