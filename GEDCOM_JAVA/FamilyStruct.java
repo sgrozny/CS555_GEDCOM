@@ -16,9 +16,13 @@ public class FamilyStruct {
         String MarriedDate;
         String DivDate;
         String WhichDate;
-        int children[] = new int[15];
+        int children[] = new int[30];
         public family(){
-
+        }
+        public void setKids(){
+           for(int i=0;i<30;i++){
+               children[i]=0;
+           }
         }
         public void setID(String pID){
             ID=pID;

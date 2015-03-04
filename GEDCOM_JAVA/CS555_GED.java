@@ -19,11 +19,16 @@ public class CS555_GED {
     public static void main(String[] args) {
         //Reads the lines of a ged file
         //Precondition: The GED file is in the specified location with the proper name
-        //Postcondition: The output will print all original GED Lines with the addition of the level number and tag
+        //Postcondition: The oustput will print all original GED Lines with the addition of the level number and tag
         
         String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
         Read_GED_File(Ged_Filename);
-        Printing.printIT(indArr, famArr,iCounter,fCounter);
+        
+        Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter, cCounter);
+        //Printing.printIT(indArr, famArr,iCounter,fCounter);
+        
+        //StasSprint1.MoreThan15Kids(famArr,fCounter);
+        //ClassName.Methodname(parameters);
     }
     private static void Read_GED_File(String fileName){
                  initTagArray(); //Loads in valid tags      
@@ -88,6 +93,7 @@ public class CS555_GED {
             else if(lvl.equals("0")&& tag.equals("FAM")){
                 fCounter++;
                 famArr[fCounter]=new FamilyStruct.family();
+                famArr[fCounter].setKids();
             }
             switch (tag){
                 case "INDI":

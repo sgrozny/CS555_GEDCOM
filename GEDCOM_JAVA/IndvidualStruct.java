@@ -10,20 +10,21 @@ package cs555_ged;
  */
 public class IndvidualStruct {
     public static class individual{
-      String name;
-      String gender;
-      String BDay;
-      String DDay;
-      String ID;
-      String WhichDate;
-      int Spouse;
-      int Child;
+       String name;
+       String gender;
+       String BDay;
+       String DDay;
+       String ID;
+       String WhichDate;
+       int Spouse;
+       int Child;
+       String FAMC;
+       String FAMS;
       public individual(){   
       }
       public individual(individual A){
 
       }
-
       public void setName(String pName){
           name=pName;
       }
