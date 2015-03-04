@@ -10,20 +10,26 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CS555_GED {
+    
     static int iCounter=-1, fCounter=-1, cCounter =0;
     static String TAGS[] = new String [16];
     static IndvidualStruct.individual indArr[] = new IndvidualStruct.individual[5000];
     static FamilyStruct.family famArr[] = new FamilyStruct.family[1000];
+    
     public static void main(String[] args) {
         //Reads the lines of a ged file
         //Precondition: The GED file is in the specified location with the proper name
         //Postcondition: The output will print all original GED Lines with the addition of the level number and tag
         
-        String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA_FOR p03/TEST.ged";
-         initTagArray(); //Loads in valid tags      
+        String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
+        Read_GED_File(Ged_Filename);
+        Printing.printIT(indArr, famArr,iCounter,fCounter);
+    }
+    private static void Read_GED_File(String fileName){
+                 initTagArray(); //Loads in valid tags      
         try {
                 //Read file
-		File file = new File(Ged_Filename);
+		File file = new File(fileName);
 		FileReader fileReader = new FileReader(file);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		StringBuffer stringBuffer = new StringBuffer();
@@ -40,7 +46,6 @@ public class CS555_GED {
                 catch (IOException e) {
 			e.printStackTrace();
 		}
-        Printing.printIT(indArr, famArr,iCounter,fCounter);
     }
     private static void Parse_GED_File(String inputline){
         /*Private Method that will print 3 lines 

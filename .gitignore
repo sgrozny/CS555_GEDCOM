@@ -214,3 +214,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 /H04/nbproject/private/
+/GEDCOM_JAVA/CS555_GEDCOM/nbproject/private/
