@@ -1,0 +1,67 @@
+run:
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Searching for 2 identical indviduals: 
+==============================================
+Error number 1:
+ID: @I2@ :  
+Name: Sergey Vasilievich
+Gener: M
+BirthDay: 19 MAY 1944
+Death Date: null
+--------------------
+Is a match to: 
+ID:  @I16@ :  
+Name: Sergey Vasilievich
+Gener: M
+BirthDay: 19 MAY 1944
+Death Date: null
+==============================================
+Error number 2:
+ID: @I12@ :  
+Name: Dmitriy Romanov
+Gener: M
+BirthDay: 10 AUG 1949
+Death Date: null
+--------------------
+Is a match to: 
+ID: @I17@ :  
+Name: Dmitriy Romanov
+Gener: M
+BirthDay: 10 AUG 1949
+Death Date: null
+
+Total errors found: 2
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Searching for 2 families with more than 15 kids: 
+==============================================
+Error number 1:
+Family ID:@F6@ has more than 15 children
+Child 1: Ivan Vasilievich
+Child 2: Sergey Vasilievich
+Child 3: Lena Petrov
+Child 4: Ilya Petrov
+Child 5: Rita Vovk
+Child 6: Dmitriy Vasilievich
+Child 7: Luba Piskunov
+Child 8: Alexander Romanov
+Child 9: Vladimir Romanov
+Child 10: Igor Vasilievich
+Child 11: Katya Vasilievich
+Child 12: Dmitriy Romanov
+Child 13: Yulia Vasilievich
+Child 14: Yuri Vasilievich
+Child 15: Luba Vasilievich
+Child 16: Dmitriy Romanov
+Total errors found: 1
+
+==============================================
+User story : Looking for any Missing birth dates:
+Birth date is misssing for Individual @I18@
+Birth date is misssing for Individual @I19@
+||||||||||||||||||||||||||||||||||||||
+Checking if gender is right on each husband and wife
+The gender of husband Yulia Vasilievich in family @F7@ is wrong!
+The gender of wife Ivan Vasilievich in family @F7@ is wrong!
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Total Errors found was: 7
