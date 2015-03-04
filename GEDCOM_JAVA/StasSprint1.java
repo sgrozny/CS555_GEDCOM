@@ -9,7 +9,7 @@ package cs555_ged;
  * @author sgroznys
  */
 public class StasSprint1 {
-    public static void MoreThan15Kids(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],int fTotal){
+    public static int MoreThan15Kids(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],int fTotal){
         int errorcounter=0;
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
         System.out.println("Searching for 2 families with more than 15 kids: ");
@@ -30,8 +30,9 @@ public class StasSprint1 {
            }
         }
         System.out.println("Total errors found: " + errorcounter);
+         return errorcounter;
     }
-    public static void TwoIdenticalIndviduals(IndvidualStruct.individual indArr[], int Itotal){
+    public static int TwoIdenticalIndviduals(IndvidualStruct.individual indArr[], int Itotal){
         //Determines if two indivduals have same name and same birthday
         int errorcounter=0;
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
@@ -53,6 +54,7 @@ public class StasSprint1 {
         }
         System.out.println();
     System.out.println("Total errors found: " + errorcounter);
+    return errorcounter;
     }
  
 }

@@ -10,10 +10,17 @@ package cs555_ged;
  */
 public class Testing {
     public static void Test_Sprint1(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
-        //Printing.printIT(indArr, famArr,iCounter,fCounter);  
+        int numErrors=0;
+        //FORMAT
+        //ClassName.Methodname(parameters);
+        
+        //Printing.printIT(indArr, famArr,Itotal,Ftotal);  
         //Printing.PritnAllChildren(indArr, famArr, Itotal, Ftotal);
-        StasSprint1.TwoIdenticalIndviduals(indArr,Itotal);
-        StasSprint1.MoreThan15Kids(indArr, famArr, Ftotal);
-             //ClassName.Methodname(parameters);
+        numErrors+=StasSprint1.TwoIdenticalIndviduals(indArr,Itotal);
+        numErrors+=StasSprint1.MoreThan15Kids(indArr, famArr, Ftotal);
+        numErrors+=HimabinduSprint1.missingBirthDate(indArr, Itotal);
+        System.out.println();
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("Total Errors found was: " + numErrors);     
     }
 }
