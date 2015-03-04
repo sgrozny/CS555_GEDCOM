@@ -1,0 +1,3 @@
+cd /c/users/zhang_000/Desktop/test3/cs555_GEDCOM
+download git pull
+upload
