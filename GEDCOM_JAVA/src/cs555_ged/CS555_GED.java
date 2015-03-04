@@ -4,6 +4,7 @@
  */
 package cs555_ged;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -21,6 +22,7 @@ public class CS555_GED {
         //Precondition: The GED file is in the specified location with the proper name
         //Postcondition: The oustput will print all original GED Lines with the addition of the level number and tag
         
+<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
         String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
         Read_GED_File(Ged_Filename);
         Printing.printIT(indArr, famArr,iCounter,fCounter);
@@ -32,6 +34,10 @@ public class CS555_GED {
     }
     private static void Read_GED_File(String fileName){
                  initTagArray(); //Loads in valid tags      
+=======
+        String  Ged_Filename = "TEST.ged";
+         initTagArray(); //Loads in valid tags      
+>>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
         try {
                 //Read file
 		File file = new File(fileName);
@@ -51,7 +57,15 @@ public class CS555_GED {
                 catch (IOException e) {
 			e.printStackTrace();
 		}
+<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
       findFamID();
+=======
+<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
+=======
+       // Printing.printIT(indArr, famArr,iCounter,fCounter);
+       MissingBirthDateUserCase.missingBirthDate(indArr, iCounter);
+>>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
+>>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
     }
     private static void Parse_GED_File(String inputline){
         /*Private Method that will print 3 lines 
