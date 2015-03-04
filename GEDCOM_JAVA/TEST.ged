@@ -114,16 +114,31 @@
 1 BIRT
 2 DATE 10 AUG 1949
 1 FAMC @F5@
-0 NOTE Error 1 for Himabindu Sprint 1 Indviduality check -> No birthdate
+0 NOTE Error 1 for Himabindu Sprint 1 birthdate check -> No birthdate
 0 INDI @I18@
 1 NAME Dmitriy /Romanov/
 1 SEX M
 1 FAMC @F5@
-0 NOTE Error 2 for Himabindu Sprint 1 Indviduality check -> No Date for birth paramter(even though shouldn't happen)
+0 NOTE Error 2 for Himabindu Sprint 1 birthdate check -> No Date for birth paramter(even though shouldn't happen)
 0 INDI @I19@
 1 NAME Sergey /Vasilievich/
 1 SEX M
 1 BIRT
+0 NOTe Error 1 for Le Sprint 1 gender check -> Husband is female 
+0 INDI  @I20@
+1 NAME Sergey /Vasilievich/
+1 SEX M
+1 BIRT
+2 DATE 19 MAY 1945
+1 FAMS @F7@
+1 FAMC @F3@
+0 NOTE Error 2 for Le Sprint 1 gendercheck -> wife is male
+0 INDI @I21@
+1 NAME Yulia /Vasilievich/
+1 SEX F
+1 BIRT
+2 DATE 5 AUG 1973
+1 FAMS @F7@
 0 FAM @F1@
 1 HUSB @I1@
 1 WIFE @I13@
@@ -150,6 +165,8 @@
 1 CHIL @I12@
 0 NOTe Error 1 for Stas Sprint 2 More than 15 kids check
 0 FAM @F6@
+1 HUsb @I1@
+1 WIFE @I3@
 1 CHIL @I1@
 1 CHIL @I2@
 1 CHIL @I3@
@@ -167,4 +184,8 @@
 1 CHIL @I15@
 1 CHIL @I16@
 1 CHIL @I17@
+0 NOTE ERROrs for Le
+0 FAM @F7@
+1 HUSB @I21@
+1 WIFE @I20@
 0 TRLR
