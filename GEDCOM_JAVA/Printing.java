@@ -17,8 +17,8 @@ public class Printing {
             System.out.println("Gener: " + indArr[i].gender);
             System.out.println("BirthDay: " + indArr[i].BDay);
             System.out.println("Death Date: " + indArr[i].DDay);
+            System.out.println("Spouse of Family " + indArr[i].FAMS);
             System.out.println("Child of Family " + famArr[indArr[i].Child].getID());
-            System.out.println("Spouse of Family " + famArr[indArr[i].Spouse].getID());
             System.out.println("==============================================");
  
        }

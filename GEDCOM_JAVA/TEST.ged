@@ -95,6 +95,21 @@
 1 BIRT
 2 DATE 11 JUL 2006
 1 FAMC @F1@
+0 NOTe Error 1 for Stas Sprint 1 Indviduality check -> same as indvidual 2
+0 INDI  @I16@
+1 NAME Sergey /Vasilievich/
+1 SEX M
+1 BIRT
+2 DATE 19 MAY 1944
+1 FAMS @F2@
+1 FAMC @F3@
+0 NOTe Error 1 for Stas Sprint 2 Indviduality check -> same as indvidual 12
+0 INDI @I12@
+1 NAME Dmitriy /Romanov/
+1 SEX M
+1 BIRT
+2 DATE 10 AUG 1949
+1 FAMC @F5@
 0 FAM @F1@
 1 HUSB @I1@
 1 WIFE @I13@
