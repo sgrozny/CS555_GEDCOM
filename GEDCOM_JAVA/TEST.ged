@@ -107,8 +107,8 @@
 2 DATE 19 MAY 1944
 1 FAMS @F2@
 1 FAMC @F3@
-0 NOTe Error 1 for Stas Sprint 2 Indviduality check -> same as indvidual 12
-0 INDI @I12@
+0 NOTE Error 1 for Stas Sprint 2 Indviduality check -> same as indvidual 12
+0 INDI @I17@
 1 NAME Dmitriy /Romanov/
 1 SEX M
 1 BIRT
@@ -138,4 +138,23 @@
 1 WIFE @I7@
 1 CHIL @I9@
 1 CHIL @I12@
+0 NOTe Error 1 for Stas Sprint 2 More than 15 kids check
+0 FAM @F6@
+1 CHIL @I1@
+1 CHIL @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 CHIL @I5@
+1 CHIL @I6@
+1 CHIL @I7@
+1 CHIL @I8@
+1 CHIL @I9@
+1 CHIL @I10@
+1 CHIL @I11@
+1 CHIL @I12@
+1 CHIL @I13@
+1 CHIL @I14@
+1 CHIL @I15@
+1 CHIL @I16@
+1 CHIL @I17@
 0 TRLR
