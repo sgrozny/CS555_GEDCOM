@@ -9,7 +9,7 @@ package cs555_ged;
  * @author sgrozny
  */
 public class Printing {
-    public static void printIT(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
+    public static void printIT(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
             System.out.println("Individuals:");
        for(int i=0;i<Itotal+1;i++){
             System.out.println("ID: " + indArr[i].getID() + " :  ");
@@ -17,32 +17,48 @@ public class Printing {
             System.out.println("Gener: " + indArr[i].gender);
             System.out.println("BirthDay: " + indArr[i].BDay);
             System.out.println("Death Date: " + indArr[i].DDay);
-            System.out.println("Spouse of Family " + indArr[i].FAMS);
-            System.out.println("Child of Family " + famArr[indArr[i].Child].getID());
+            System.out.println("Spouse of Family: " + indArr[i].FAMS);
+            if(indArr[i].getChild()!=null){
+            System.out.println("Child of Family: "  + famArr[indArr[i].getChild()].getID());
+            }
+            else {
+                System.out.println("Child of Family: null" );
+            }
             System.out.println("==============================================");
  
        }
        System.out.println("------------------------------");
        System.out.println("Families");
-       int w,h;
+       Integer w,h;
        for(int i=0;i<Ftotal+1;i++){
            System.out.println("Family ID:" +famArr[i].getID());
            w=famArr[i].getWife();
            h=famArr[i].getHusb();
+           if(h!=null){
            System.out.println("Husband: "+ indArr[h].getName());
+           }
+           else{
+               System.out.println("Husband: null");
+           }
+           if(w!=null){
            System.out.println("Wife: " + indArr[w].getName());
+           }
+           else{
+                System.out.println("Wife: null");
+           }
            System.out.println("DivorceDate: " + famArr[i].getDivDate());
+           System.out.println("Num of Children: " + famArr[i].getNumChildren());
            System.out.println("~~~~~~~~~~~~~~~~~");
        }
     }
-    public static void PrintIndividualDetails(IndvidualStruct.individual indArr[], int i){
+    public static void PrintIndividualDetails(IndividualStruct.individual indArr[], int i){
             System.out.println("ID: " + indArr[i].getID() + " :  ");
             System.out.println("Name: " + indArr[i].getName());
             System.out.println("Gener: " + indArr[i].gender);
             System.out.println("BirthDay: " + indArr[i].BDay);
             System.out.println("Death Date: " + indArr[i].DDay);
     }
-    public static void PritnAllChildren(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
+    public static void PritnAllChildren(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
          for(int i=0;i<Ftotal+1;i++){
              System.out.println("Family ID:" +famArr[i].getID());
                    for(int j=0; j<30;j++){
