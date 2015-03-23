@@ -19,6 +19,7 @@ public class Testing {
         numErrors+=StasSprint1.TwoIdenticalIndviduals(indArr,Itotal);
         numErrors+=StasSprint1.MoreThan15Kids(indArr, famArr, Ftotal);
         numErrors+=HimabinduSprint1.missingBirthDate(indArr, Itotal);
+        numErrors+=LeSprint1.userstory1(indArr, famArr, Ftotal);
         System.out.println();
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         System.out.println("Total Errors found was: " + numErrors);     

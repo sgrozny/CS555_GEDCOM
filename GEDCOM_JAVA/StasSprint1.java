@@ -40,6 +40,7 @@ public class StasSprint1 {
         for(int i=0;i<Itotal;i++){
             for(int j=i+1;j<Itotal+1;j++){
                 if(indArr[i].name.equals(indArr[j].name)){
+                    if(indArr[i].BDay!= null){
                    if(indArr[i].BDay.equals(indArr[j].BDay)){
                        errorcounter++;
                        System.out.println("==============================================");
@@ -49,6 +50,7 @@ public class StasSprint1 {
                        System.out.println("Is a match to: ");
                        Printing.PrintIndividualDetails(indArr,j);
                    }
+                    }
                 }
             }
         }
