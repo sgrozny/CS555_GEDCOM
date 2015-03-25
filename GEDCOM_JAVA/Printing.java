@@ -58,8 +58,8 @@ public class Printing {
             print(tabs,"Gener: " + indArr[i].gender);
             print(tabs,"BirthDay: " + indArr[i].BDay);
             print(tabs,"Death Date: " + indArr[i].DDay);
-            print(tabs,"Spouse to Family" +indArr[i].FAMS);
-            print(tabs,"Child to Family" +indArr[i].FAMC);
+            print(tabs,"Spouse to Family: " +indArr[i].FAMS);
+            print(tabs,"Child to Family: " +indArr[i].FAMC);
     }
     public static void PritnAllChildren(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
          for(int i=0;i<Ftotal+1;i++){

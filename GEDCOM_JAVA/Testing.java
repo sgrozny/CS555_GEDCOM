@@ -22,7 +22,9 @@ public class Testing {
 //        numErrors+=LeSprint1.userstory1(indArr, famArr, Ftotal);
           numErrors+=StasSprint2.ChildisItsparent(indArr, Itotal, famArr, Ftotal);
           numErrors+=StasSprint2_US2.ind_is_SpouseandChild(indArr, Itotal);
- //         numErrors+=StasSprint2_US2.indRecordsMatch(indArr, Itotal, famArr);
+//          numErrors+=StasSprint2_US2.indRecordsMatch(indArr, Itotal, famArr);
+//          numErrors+=HimabinduSprint2.childrenWithSameNameandDateofBirth(indArr, Itotal, famArr, Ftotal);
+//          numErrors+=HimabinduSprint2.missingMarriageDate(famArr, Itotal);
         System.out.println();
         System.out.println("***********************************************");
         System.out.println("Total number of errors found was: " + numErrors);     

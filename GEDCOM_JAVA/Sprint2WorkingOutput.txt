@@ -1,0 +1,17 @@
+-----------Checking if a loop exists on any family members-----------
+     ERROR # FOUND: There is a loop on individual: A
+     ERROR # FOUND: There is a loop on individual: A
+     ERROR # FOUND: There is a loop on individual: B
+     ERROR # FOUND: There is a loop on individual: D
+-----------Checking if Indvidual is both a spouse and child to same family:-----------
+     Error #1 found
+          ID: @SG-2-3-BCP@
+          Name: BOTH_CHILD_AND_A_PARENT
+          Gener: F
+          BirthDay: 28 OCT 1925
+          Death Date: null
+          Spouse to Family: @SG-2-2/3-F6@
+          Child to Family: @SG-2-2/3-F6@
+
+***********************************************
+Total number of errors found was: 5
