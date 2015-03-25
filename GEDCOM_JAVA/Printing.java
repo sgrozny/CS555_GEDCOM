@@ -52,12 +52,14 @@ public class Printing {
            System.out.println("~~~~~~~~~~~~~~~~~");
        }
     }
-    public static void PrintIndividualDetails(IndividualStruct.individual indArr[], int i){
-            System.out.println("ID: " + indArr[i].getID() + " :  ");
-            System.out.println("Name: " + indArr[i].getName());
-            System.out.println("Gener: " + indArr[i].gender);
-            System.out.println("BirthDay: " + indArr[i].BDay);
-            System.out.println("Death Date: " + indArr[i].DDay);
+    public static void PrintIndividualDetails(IndividualStruct.individual indArr[], int i, int tabs){
+            print(tabs,"ID: " + indArr[i].getID());
+            print(tabs,"Name: " + indArr[i].getName());
+            print(tabs,"Gener: " + indArr[i].gender);
+            print(tabs,"BirthDay: " + indArr[i].BDay);
+            print(tabs,"Death Date: " + indArr[i].DDay);
+            print(tabs,"Spouse to Family" +indArr[i].FAMS);
+            print(tabs,"Child to Family" +indArr[i].FAMC);
     }
     public static void PritnAllChildren(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
          for(int i=0;i<Ftotal+1;i++){
