@@ -9,7 +9,7 @@ package cs555_ged;
  * @author sgroznys
  */
 public class StasSprint1 {
-    public static int MoreThan15Kids(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],int fTotal){
+    public static void MoreThan15Kids(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],int fTotal){
         int errorcounter=0;
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
         System.out.println("Searching for 2 families with more than 15 kids: ");
@@ -30,9 +30,8 @@ public class StasSprint1 {
            }
         }
         System.out.println("Total errors found: " + errorcounter);
-         return errorcounter;
     }
-    public static int TwoIdenticalIndviduals(IndvidualStruct.individual indArr[], int Itotal){
+    public static void TwoIdenticalIndviduals(IndvidualStruct.individual indArr[], int Itotal){
         //Determines if two indivduals have same name and same birthday
         int errorcounter=0;
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
@@ -40,7 +39,6 @@ public class StasSprint1 {
         for(int i=0;i<Itotal;i++){
             for(int j=i+1;j<Itotal+1;j++){
                 if(indArr[i].name.equals(indArr[j].name)){
-                    if(indArr[i].BDay!= null){
                    if(indArr[i].BDay.equals(indArr[j].BDay)){
                        errorcounter++;
                        System.out.println("==============================================");
@@ -50,13 +48,11 @@ public class StasSprint1 {
                        System.out.println("Is a match to: ");
                        Printing.PrintIndividualDetails(indArr,j);
                    }
-                    }
                 }
             }
         }
         System.out.println();
     System.out.println("Total errors found: " + errorcounter);
-    return errorcounter;
     }
  
 }
