@@ -23,30 +23,8 @@ public class HimabinduSprint2 {
 		return numErrors;
 	}
 	
-	/* public static void TwoIdenticalIndviduals(IndvidualStruct.individual indArr[], int Itotal){
-	        //Determines if two indivduals have same name and same birthday
-	        int errorcounter=0;
-	        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-	        System.out.println("Searching for 2 identical indviduals: ");
-	        for(int i=0;i<Itotal;i++){
-	            for(int j=i+1;j<Itotal+1;j++){
-	                if(indArr[i].name.equals(indArr[j].name)){
-	                   if(indArr[i].BDay.equals(indArr[j].BDay)){
-	                       errorcounter++;
-	                       System.out.println("==============================================");
-	                       System.out.println("Error number " + errorcounter + ":");
-	                       Printing.PrintIndividualDetails(indArr,i);
-	                       System.out.println("--------------------");
-	                       System.out.println("Is a match to: ");
-	                       Printing.PrintIndividualDetails(indArr,j);
-	                   }
-	                }
-	            }
-	        }
-	        System.out.println();
-	    System.out.println("Total errors found: " + errorcounter);
-	    }*/
-	public static void childrenWithSameNameandDateofBirth(IndvidualStruct.individual indArr[], int Itotal,FamilyStruct.family famArr[],int Ftotal){
+	
+	public static int childrenWithSameNameandDateofBirth(IndvidualStruct.individual indArr[], int Itotal,FamilyStruct.family famArr[],int Ftotal){
         //Determines if two indivduals have same name and same birthday
         int errorcounter=0;
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
@@ -72,30 +50,8 @@ public class HimabinduSprint2 {
         }
         System.out.println();
     System.out.println("Total errors found: " + errorcounter);
+    return errorcounter;
     }
 	 
-	/*	public static int childrenWithSameNameandDateofBirth(IndvidualStruct.individual indArr[],FamilyStruct.family famArr[],int Itotal, int ftotal )
-	{
-		int numErrors = 0, numberOfChildren=0;
-		System.out.println();
-	     System.out.println("==============================================");
-		System.out.println("User story : Looking for children in the same family with same name and Date of Birth:");
-		for(int i=0; i<=ftotal;i++)
-		{
-			//if(famArr[i].getChild(i)==0)
-			//{
-				System.out.println(famArr[i].getID());
-				for(int j=0;j<Itotal;j++){
-					System.out.println(famArr[i].getChild(j));
-				}
-			//}
-			//else
-			//{
-				//numberOfChildren++;
-			//}
-		
-		}
-		//System.out.println("No of children "+numberOfChildren);
-		return numberOfChildren;
-	}*/
+	
 }
