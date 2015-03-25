@@ -18,12 +18,13 @@ public class Printing {
             System.out.println("BirthDay: " + indArr[i].BDay);
             System.out.println("Death Date: " + indArr[i].DDay);
             System.out.println("Spouse of Family: " + indArr[i].FAMS);
-            if(indArr[i].getChild()!=null){
-            System.out.println("Child of Family: "  + famArr[indArr[i].getChild()].getID());
-            }
-            else {
-                System.out.println("Child of Family: null" );
-            }
+            System.out.println("Child of Family:" + indArr[i].FAMC);
+//            if(indArr[i].getChild()!=null){
+//            System.out.println("Child of Family: "  + famArr[indArr[i].getChild()].getID());
+//            }
+//            else {
+//                System.out.println("Child of Family: null" );
+//            }
             System.out.println("==============================================");
  
        }
@@ -71,4 +72,15 @@ public class Printing {
                    }
            }
     }
+     public static void print(int tab, String txt){
+        String tabS="";
+        for(int i=0;i<tab;i++){
+            tabS= tabS.concat("     ");
+        }
+        System.out.println(tabS+txt);
+    }
+     public static void printHeader(String header){
+         String x="-----------";
+         System.out.println(x+header+x);
+     }
 }

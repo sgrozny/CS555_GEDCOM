@@ -16,11 +16,16 @@ public class IndividualStruct {
        String DDay;
        String ID;
        String WhichDate;
+       boolean visited;
+       //Following should be arrays
        Integer Spouse;
        Integer Child;
        String FAMC;
        String FAMS;
-       boolean visited;
+       Integer[] SpouseA;
+       Integer[] ChildA;
+       String[] FAMCA;
+       String[] FAMSA;
       public individual(){   
       }
       public individual(individual A){
@@ -71,5 +76,7 @@ public class IndividualStruct {
       public Integer getChild(){
           return Child;
       }
+      
+      
     }  
 }
