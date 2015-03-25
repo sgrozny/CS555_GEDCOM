@@ -4,7 +4,6 @@
  */
 package cs555_ged;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,22 +21,20 @@ public class CS555_GED {
         //Precondition: The GED file is in the specified location with the proper name
         //Postcondition: The oustput will print all original GED Lines with the addition of the level number and tag
         
-<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
-        String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
+        String  Ged_Filename = "TEST.ged";
         Read_GED_File(Ged_Filename);
-        Printing.printIT(indArr, famArr,iCounter,fCounter);
-        Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter, cCounter);
         
+        Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter, cCounter);
+        //Printing.printIT(indArr, famArr,iCounter,fCounter);
         
         //StasSprint1.MoreThan15Kids(famArr,fCounter);
-       
+        //ClassName.Methodname(parameters);
+       // HimabinduSprint1.missingBirthDate(indArr, iCounter);
+       // HimabinduSprint2.missingMarriageDate(famArr, fCounter);
+       // HimabinduSprint2.childrenWithSameNameandDateofBirth(indArr, famArr, iCounter, fCounter);
     }
     private static void Read_GED_File(String fileName){
                  initTagArray(); //Loads in valid tags      
-=======
-        String  Ged_Filename = "TEST.ged";
-         initTagArray(); //Loads in valid tags      
->>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
         try {
                 //Read file
 		File file = new File(fileName);
@@ -57,15 +54,6 @@ public class CS555_GED {
                 catch (IOException e) {
 			e.printStackTrace();
 		}
-<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
-      findFamID();
-=======
-<<<<<<< Updated upstream:GEDCOM_JAVA/CS555_GED.java
-=======
-       // Printing.printIT(indArr, famArr,iCounter,fCounter);
-       MissingBirthDateUserCase.missingBirthDate(indArr, iCounter);
->>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
->>>>>>> Stashed changes:GEDCOM_JAVA/src/cs555_ged/CS555_GED.java
     }
     private static void Parse_GED_File(String inputline){
         /*Private Method that will print 3 lines 
@@ -121,19 +109,17 @@ public class CS555_GED {
                     indArr[iCounter].setGender(arguement);  
                     break;
                 case "FAMS":
-                    indArr[iCounter].FAMS = arguement;
-//                   id=findFamID(arguement);
-//                   if (id>=0){
-//                       indArr[iCounter].setSpouse(id);
-//                   }
+                   id=findFamID(arguement);
+                   if (id>=0){
+                       indArr[iCounter].setSpouse(id);
+                   }
                     break;
                 case "FAMC":
-                   indArr[iCounter].FAMC = arguement;
-//                   id=findFamID(arguement);
-//                   if (id>=0){
-//                       indArr[iCounter].setChild(id);
-//                   }
-//                    break;
+                   id=findFamID(arguement);
+                   if (id>=0){
+                       indArr[iCounter].setChild(id);
+                   }
+                    break;
                 case "BIRT":
                     indArr[iCounter].setDate(tag);
                     break;
@@ -177,7 +163,7 @@ public class CS555_GED {
                     famArr[fCounter].setDate(tag);
                     break;
                 case "MARR":
-                    famArr[fCounter].setDate(tag);
+                    famArr[fCounter].setMarriedDate(tag);
                     break;
                 case "CHIL":
                     id= findIndiID(arguement);
@@ -198,25 +184,24 @@ public class CS555_GED {
         return name.replace("/", "");
     }
     private static int findIndiID(String indiID){
+        int found=-1;
         for(int i=0;i<iCounter+1;i++){
              if(indArr[i].getID().equals(indiID)){
                 return i;
             }
+
         }
-        return -1;
+        return found;
     }
-        
-    private static void findFamID(){
-        for(int j=0;j<iCounter+1;j++){
-            for(int i=0;i<fCounter+1;i++){
-             if(famArr[i].getID().equals(indArr[j].FAMC)){
-                 indArr[j].Child=i;
-             }
-             else if(famArr[i].getID().equals(indArr[j].FAMS)){
-                 indArr[j].Spouse=i;
-             }
+    private static int findFamID(String fID){
+        int found=-1;
+        for(int i=0;i<fCounter+1;i++){
+             if(famArr[i].getID().equals(fID)){
+                return i;
             }
+
         }
+        return found;
     }
      public static void initTagArray(){
          //intializes the array of tags

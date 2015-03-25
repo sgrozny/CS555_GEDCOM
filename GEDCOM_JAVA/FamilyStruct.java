@@ -11,18 +11,33 @@ package cs555_ged;
 public class FamilyStruct {
     public static class family{
         String ID;
-        int husband;
-        int wife;
+        Integer husband;
+        Integer wife;
         String MarriedDate;
         String DivDate;
         String WhichDate;
-        int children[] = new int[30];
+        Integer children[] = new Integer[30];
+        int numChildren;
+        boolean visited;
         public family(){
+            numChildren=0;
         }
         public void setKids(){
            for(int i=0;i<30;i++){
                children[i]=-1;
            }
+        }
+        private void setNumChildren(){
+            int i=0;
+            numChildren=0;
+            while(children[i]!=null){
+                numChildren++;
+                i++;
+            }
+        }
+        public int getNumChildren(){
+            setNumChildren();
+            return numChildren;
         }
         public void setID(String pID){
             ID=pID;
@@ -39,7 +54,7 @@ public class FamilyStruct {
          public void setWife(int W){
             wife= W;
         }
-         public int getWife(){
+         public Integer getWife(){
             return wife;
         }
          public void setDate(String DateType){
@@ -64,7 +79,11 @@ public class FamilyStruct {
             children[index]=c;
         }
         public int getChild(int index){
+            if(children[index]!=null){
             return children[index];
+            }
+            else return -1;
+                    
         }
     } 
 }
