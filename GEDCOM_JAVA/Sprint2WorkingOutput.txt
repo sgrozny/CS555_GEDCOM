@@ -1,3 +1,4 @@
+run:
 -----------Checking if a loop exists on any family members-----------
      ERROR # FOUND: There is a loop on individual: A
      ERROR # FOUND: There is a loop on individual: A
@@ -13,5 +14,16 @@
           Spouse to Family: @SG-2-2/3-F6@
           Child to Family: @SG-2-2/3-F6@
 
+==============================================
+User story : Looking for any Missing Marriage date for a family:
+Marriage date is missing for Family@F5@
+Marriage date is missing for Family@SG-2-1-F1@
+Marriage date is missing for Family@SG-2-1-F2@
+Marriage date is missing for Family@SG-2-1-F3@
+Marriage date is missing for Family@SG-2-1-F4@
+Marriage date is missing for Family@SG-2-1-F5@
+Marriage date is missing for Family@SG-2-2/3-F6@
+
 ***********************************************
-Total number of errors found was: 5
+Total number of errors found was: 12
+BUILD SUCCESSFUL (total time: 0 seconds)

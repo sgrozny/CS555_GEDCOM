@@ -1,105 +1,253 @@
-0 NOTE Stas Grozny 
+0 NOTE The following represent the loop error (individual is parent of its parent (as many generarations back))
+0 NOTE how family tree looks
+0 NOTE Error occurs because indivdual A is represnted several times in the tree
+		 A-AWife
+		 /|\
+		/ | \
+            F-B   C  D
+	    /|    |  |
+	   E A    G  A
 
-0 INDI @I1@
+0 INDI @SG-2-1-A@
 1 NAME A
+1 SEX M
+1 BIRT
+2 DATE 21 SEP 1973
+1 FAMS @SG-2-1-F1@
+1 FAMC @SG-2-1-F2@
+1 FAMC @SG-2-1-F4@
+
+0 INDI  @SG-2-1-AW@
+1 NAME A-Wife
+1 SEX F
+1 BIRT
+2 DATE 19 MAY 1944
+1 FAMS @SG-2-1-F1@
+
+0 INDI @SG-2-1-B@
+1 NAME B
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-1-F2@
+1 FAMC @SG-2-1-F1@
+
+0 INDI @SG-2-1-C@
+1 NAME C
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-1-F3@
+1 FAMC @SG-2-1-F1@
+
+0 INDI @SG-2-1-D@
+1 NAME D
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-1-F4@
+1 FAMC @SG-2-1-F1@
+
+0 INDI @SG-2-1-E@
+1 NAME E
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-1-F5@
+1 FAMC @SG-2-1-F2@
+
+0 INDI @SG-2-1-G@
+1 NAME G
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMC @SG-2-1-F3@
+
+0 INDI @SG-2-1-F@
+1 NAME F
+1 SEX F
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-1-F2@
+
+0 NOTE Error Individual is both a parent and a child of the same family
+0 NOTE Error This individual's data won't be in the family as well
+0 INDI @SG-2-3-BCP@
+1 NAME BOTH_CHILD_AND_A_PARENT
+1 SEX F
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-2/3-F6@
+1 FAMC @SG-2-2/3-F6@
+
+0 NOTE Error This individual's data won't be in the family
+0 NOTE Error this individual is part of a family that doesn't exist
+0 INDI @SG-2-3-RDM@
+1 NAME Records_Don't_Match
+1 SEX F
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-2-2/3-F6@
+1 FAMC &F7&
+0 INDI @I1@
+1 NAME Ivan /Vasilievich/
 1 SEX M
 1 BIRT
 2 DATE 21 SEP 1973
 1 FAMS @F1@
 1 FAMC @F2@
-1 FAMC @F4@
-
 0 INDI  @I2@
-1 NAME A-Wife
-1 SEX F
+1 NAME Sergey /Vasilievich/
+1 SEX M
 1 BIRT
 2 DATE 19 MAY 1944
-1 FAMS @F1@
-
-0 INDI @I3@
-1 NAME B
-1 SEX M
-1 BIRT
-2 DATE 28 OCT 1925
 1 FAMS @F2@
-1 FAMC @F1@
-0 INDI @I4@
-1 NAME C
-1 SEX M
+1 FAMC @F3@
+0 INDI  @I3@
+1 NAME Lena /Petrov/
+1 SEX F
 1 BIRT
-2 DATE 28 OCT 1925
-1 FAMS @F3@
-1 FAMC @F1@
-0 INDI @I5@
-1 NAME D
+2 DATE 18 NOV 1947
+1 FAMS @F2@
+1 FAMC @F4@
+0 INDI @I4@
+1 NAME Ilya /Petrov/
 1 SEX M
 1 BIRT
 2 DATE 28 OCT 1925
 1 FAMS @F4@
+0 INDI @I5@
+1 NAME Rita /Vovk/
+1 SEX F
+1 BIRT
+2 DATE 1 JUL 1927
+1 FAMS @F4@
+0 INDI @I6@
+1 NAME Dmitriy /Vasilievich/
+1 SEX M
+1 BIRT
+2 DATE 7 AUG 1926
+1 DEAT Y
+2 DATE 10 SEP 1944
+1 FAMS @F3@
+0 INDI @I7@
+1 NAME Luba /Piskunov/
+1 SEX F
+1 BIRT
+2 DATE 21 JUN 1924
+1 FAMS @F3@
+1 FAMS @F5@
+0 INDI @I8@
+1 NAME Alexander /Romanov/
+1 SEX M
+1 BIRT
+2 DATE 1 APR 1926
+1 FAMS @F5@
+0 INDI @I9@
+1 NAME Vladimir /Romanov/
+1 SEX M
+1 BIRT
+2 DATE 24 FEB 1951
+1 FAMC @F5@
+0 INDI @I10@
+1 NAME Igor /Vasilievich/
+1 SEX M
+1 BIRT
+2 DATE 15 OCT 1975
+1 FAMC @F2@
+0 INDI @I11@
+1 NAME Katya /Vasilievich/
+1 SEX F
+1 BIRT
+2 DATE 15 OCT 1975
+1 FAMC @F2@
+0 INDI @I12@
+1 NAME Dmitriy /Romanov/
+1 SEX M
+1 BIRT
+2 DATE 10 AUG 1949
+1 FAMC @F5@
+0 INDI @I13@
+1 NAME Yulia /Vasilievich/
+1 SEX F
+1 BIRT
+2 DATE 5 AUG 1975
+1 FAMS @F1@
+0 INDI @I14@
+1 NAME Luba /Vasilievich/
+1 SEX F
+1 BIRT
+2 DATE 11 JUL 2006
 1 FAMC @F1@
 
-0 INDI @I6@
-1 NAME E
-1 SEX M
-1 BIRT
-2 DATE 28 OCT 1925
-1 FAMS @F5@
-1 FAMC @F2@
-
-0 INDI @I7@
-1 NAME G
-1 SEX M
-1 BIRT
-2 DATE 28 OCT 1925
-1 FAMC @F3@
-
-0 INDI @I8@
-1 NAME F
+0 INDI @I15@
+1 NAME Luba /Vasilievich/
 1 SEX F
 1 BIRT
-2 DATE 28 OCT 1925
-1 FAMS @F2@
-
-0 INDI @I9@
-1 NAME BOTH_CHILD_AND_A_PARENT
-1 SEX F
-1 BIRT
-2 DATE 28 OCT 1925
-1 FAMS @F6@
-1 FAMC @F6@
-
-0 INDI @I10@
-1 NAME Records_Don't_Match
-1 SEX F
-1 BIRT
-2 DATE 28 OCT 1925
-1 FAMS @F6@
-1 FAMC @F6@
-1 FAMC &F7&
+2 DATE 11 JUL 2006
+1 FAMC @F1@
 
 0 FAM @F1@
 1 HUSB @I1@
-1 WIFE @I2@
-1 CHIL @I3@
-1 CHIL @I4@
-1 CHIL @I5@
+1 WIFE @I13@
+1 MARR 
+2 DATE 12 SEP 2003
+1 CHIL @I14@
+1 CHIL @I15@
 
 0 FAM @F2@
-1 WIFE @I8@
-1 HUSB @I3@
-1 CHIL @I6@
+1 HUSB @I2@
+1 WIFE @I3@
+1 MARR 
+2 DATE 4 JAN 1971
 1 CHIL @I1@
+1 CHIL @I10@
+1 CHIL @I11@
 
 0 FAM @F3@
-1 HUSB @I4@
-1 CHIL @I7@
+1 HUSB @I6@
+1 WIFE @I7@
+1 MARR 
+2 DATE 23 JUL 1942
+1 CHIL @I2@
 
 0 FAM @F4@
-1 HUSB @I5@
-1 CHIL @I1@
+1 HUSB @I4@
+1 WIFE @I5@
+1 MARR 
+2 DATE 18 AUG 1941
+1 CHIL @I3@
 
 0 FAM @F5@
-1 HUSB @I6@
+1 HUSB @I8@
+1 WIFE @I1@
+1 MARR 
+1 CHIL @I9@
+1 CHIL @I12@
 
-0 FAM @F6@
+0 FAM @SG-2-1-F1@
+1 HUSB @SG-2-1-A@
+1 WIFE @SG-2-1-AW@
+1 CHIL @SG-2-1-B@
+1 CHIL @SG-2-1-C@
+1 CHIL @SG-2-1-D@
+
+0 FAM @SG-2-1-F2@
+1 WIFE @SG-2-1-F@
+1 HUSB @SG-2-1-B@
+1 CHIL @SG-2-1-E@
+1 CHIL @SG-2-1-A@
+
+0 FAM @SG-2-1-F3@
+1 HUSB @SG-2-1-C@
+1 CHIL @SG-2-1-G@
+
+0 FAM @SG-2-1-F4@
+1 HUSB @SG-2-1-D@
+1 CHIL @SG-2-1-A@
+
+0 FAM @SG-2-1-F5@
+1 HUSB @SG-2-1-E@
+
+0 FAM @SG-2-2/3-F6@
 0 TRLR
