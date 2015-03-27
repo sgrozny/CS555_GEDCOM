@@ -5,8 +5,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LSprint2 {
-   public static int MarryProblems(IndividualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
+public class LeSprint2 {
+   public static int MarryProblems(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
            try{ int numerrors=0;   
             int w,h;
              String marry;

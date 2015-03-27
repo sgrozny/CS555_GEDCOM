@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class LeSprint1 {
-    public static int userstory1(IndividualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
+    public static int userstory1(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
            // System.out.println("Individuals:");
            int numerrors=0;
            int w,h;
@@ -32,7 +32,7 @@ public class LeSprint1 {
            }
        return numerrors;
   }
-    public static int MarryProblems(IndividualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
+    public static int MarryProblems(IndvidualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
            // System.out.println("Individuals:");
         //Inprogress
         int numerrors=0;   

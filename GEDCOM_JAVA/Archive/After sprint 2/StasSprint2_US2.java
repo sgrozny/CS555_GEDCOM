@@ -25,7 +25,7 @@ public class StasSprint2_US2 {
     }
     public static int indRecordsMatch(IndividualStruct.individual indArr[], Integer iTotal, FamilyStruct.family famArr[]){
         int numerrors=0;
-        Printing.printHeader("Checking if all indvidual records match family records:");
+        System.out.println("Checking if all indvidual records match family records:");
             for(int i=0;i<iTotal+1;i++){
                 if (DiffinRecordsforChild(indArr,i,famArr)){
                     numerrors++;
