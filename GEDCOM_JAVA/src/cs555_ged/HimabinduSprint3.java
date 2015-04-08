@@ -85,26 +85,3 @@ public static int birthBeforeMomBirth(FamilyStruct.family famArr[],IndvidualStru
 }
 
 }
-/*public static int MarryProblems(IndividualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal){
-    // System.out.println("Individuals:");
- //Inprogress
- int numerrors=0;   
- int w,h;
-    String marry;
-    String wifedate;
-    String husbanddate;
-for(int i=0;i<Ftotal+1;i++){
-     marry=famArr[i].getMarriedDate();
-     w=famArr[i].getWife();
-     h=famArr[i].getHusb();
-     husbanddate=indArr[h].getDDay();
-     wifedate=indArr[w].getDDay();
-     Date date1=new SimpleDateFormat("dd MMM yyyy").parse(marry);
-     Date date2=new SimpleDateFormat("dd MMM yyyy").parse(husbanddate);
-     Date date3=new SimpleDateFormat("dd MMM yyyy").parse(wifedate);
-     if(date1.getTime()>date2.getTime()||date1.getTime()>date3.getTime())
-    {
-      System.out.println("the marrydate of persons is older than the deaddate of the person!");
-       }
-}
-return numerrors;  */
