@@ -1,0 +1,98 @@
+0 NOTE Himabindu Chaturvedula
+0 INDI @HC-3-1-A@
+1 NAME A
+1 SEX F
+1 BIRT
+2 DATE 24 JUL 1918
+1 DEAT
+2 DATE 20 SEP 1920
+1 FAMS @HC-3-1-F1@
+
+0 INDI  @HC-3-1-B@
+1 NAME B
+1 SEX F
+1 BIRT
+2 DATE 19 MAY 1920
+1 DEAT
+2 DATE 14 JUN 1980
+1 FAMS @HC-3-1-F2@
+
+0 INDI  @HC-3-1-C@
+1 NAME C
+1 SEX F
+1 BIRT
+2 DATE 10 JAN 1982
+1 DEAT
+2 DATE 19 MAY 1983
+1 FAMS @HC-3-1-F3@
+
+0 INDI @HC-3-1-A2@
+1 NAME A2
+1 SEX F
+1 BIRT
+2 DATE 20 SEP 1944
+1 FAMC @HC-3-1-F1@
+
+0 INDI @HC-3-1-B1@
+1 NAME B1
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1940
+1 FAMC @HC-3-1-F2@
+
+0 INDI @HC-3-1-B2@
+1 NAME B2
+1 SEX M
+1 BIRT
+2 DATE 18 NOV 1941
+1 FAMC @HC-3-1-F2@
+
+0 INDI @HC-3-1-C1@
+1 NAME C1
+1 SEX F
+1 BIRT
+2 DATE 7 AUG 1944
+1 FAMC @HC-3-1-F3@
+
+0 INDI @HC-3-1-I1@
+1 NAME I1
+1 SEX M
+1 BIRT
+2 DATE 21 SEP 1920
+1 FAMS @HC-3-1-F1@
+
+0 INDI  @HC-3-1-I2@
+1 NAME I2
+1 SEX M
+1 BIRT
+2 DATE 19 MAY 1921
+1 FAMS @HC-3-1-F2@
+
+0 FAM @HC-3-1-F1@
+1 HUSB @HC-3-1-I1@
+1 WIFE @HC-3-1-A@
+1 CHIL @HC-3-1-A2@
+
+0 FAM @HC-3-1-F2@
+1 HUSB @HC-3-1-I2@
+1 WIFE @HC-3-1-B@
+1 CHIL @HC-3-1-B1@
+1 CHIL @HC-3-1-B2@
+
+0 FAM @HC-3-1-F3@
+1 HUSB @HC-3-1-I1@
+1 WIFE @HC-3-1-C@
+1 CHIL @HC-3-1-C1@
+
+0 TRLR
+
+0 NOTE  User Story to check Mom's death date before birth date of Child
+
+0 NOTE Mom with death date before birth date of kid@HC-3-1-F1@
+0 Number of Errors1
+
+0 NOTE User story to check Mom's birth date after birth date of Child
+
+0 NOTE Mom with birth date later birth date of kid@HC-3-1-F3@
+Number of Errors1
+
