@@ -1,14 +1,62 @@
-0 NOTE Himabindu Chaturvedula
-0 INDI @HC-3-1-A@
-1 NAME A
+0 NOTE @SG@ These are used to check that every recorded matches between individual and family and vice versa
+
+0 INDI @SG-3-US10-A@
+1 NAME Alfred
+1 SEX M
+1 BIRT
+2 DATE 21 SEP 1943
+1 FAMS @SG-3-US10-F1@
+
+0 INDI @SG-3-US10-AW@
+1 NAME Angela
 1 SEX F
 1 BIRT
-2 DATE 24 JUL 1918
-1 DEAT
-2 DATE 20 SEP 1920
-1 FAMS @HC-3-1-F1@
+2 DATE 19 MAY 2014
+1 FAMS @SG-3-US10-F1@
 
-0 INDI  @HC-3-1-B@
+0 INDI @SG@
+1 NAME test
+1 SEX F
+1 FAMS Test
+
+0 INDI @SG2@
+1 NAME WrongSexSpouse
+1 SEX M
+1 FAMS test2
+
+0 INDI @SG-3-US10-B@
+1 NAME Ben
+1 SEX M
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-3-US10-F2@
+1 FAMC @SG-3-US10-F1@
+
+0 INDI @SG-3-US10-BW@
+1 NAME Breanna
+1 SEX F
+1 BIRT
+2 DATE 28 OCT 1925
+1 FAMS @SG-3-US10-F2@
+1 FAMC @SG-3-US10-F3@
+
+0 INDI @SG-3-US10-C@
+1 NAME Chris
+1 SEX M
+1 BIRT
+2 DATE 21 SEP 1943
+1 FAMC @SG-3-US10-F2@
+1 FAMS @SG-3-US10-F3@
+
+0 INDI @SG-3-US10-CW@
+1 NAME Cathy
+1 SEX F
+1 BIRT
+2 DATE 21 SEP 1943
+1 FAMC @SG-3-US10-F2@
+1 FAMS @SG-3-US10-F3@
+
+0 INDI @HC-3-1-B@
 1 NAME B
 1 SEX F
 1 BIRT
@@ -17,7 +65,7 @@
 2 DATE 14 JUN 1980
 1 FAMS @HC-3-1-F2@
 
-0 INDI  @HC-3-1-C@
+0 INDI @HC-3-1-C@
 1 NAME C
 1 SEX F
 1 BIRT
@@ -61,12 +109,42 @@
 2 DATE 21 SEP 1920
 1 FAMS @HC-3-1-F1@
 
-0 INDI  @HC-3-1-I2@
+0 INDI @HC-3-1-I2@
 1 NAME I2
 1 SEX M
 1 BIRT
 2 DATE 19 MAY 1921
 1 FAMS @HC-3-1-F2@
+
+0 FAM test2
+1 HUSB @SG2@
+
+0 FAM @SG-3-US10-F1@
+1 WIFE @SG-3-US10-BW@
+1 CHIL @SG-3-US10-B@
+1 CHIL @SG-3-US10-C@
+
+0 FAM @SG-3-US10-F2@
+1 WIFE @SG-3-US10-BW@
+1 HUSB @SG-3-US10-B@
+1 CHIL @SG-3-US10-C@
+
+0 FAM @SG-3-US10-F3@
+1 WIFE @SG-3-US10-BW@
+1 HUSB @SG-3-US10-C@
+
+0 FAM @SG-3-US10-F4@
+1 WIFE @SG-3-US10-DW@
+1 CHIL @SG-3-US10-AW@
+1 CHIL Troll
+0 INDI @HC-3-1-A@
+1 NAME A
+1 SEX F
+1 BIRT
+2 DATE 24 JUL 1918
+1 DEAT
+2 DATE 20 SEP 1920
+1 FAMS @HC-3-1-F1@
 
 0 FAM @HC-3-1-F1@
 1 HUSB @HC-3-1-I1@
@@ -86,7 +164,7 @@
 
 0 TRLR
 
-0 NOTE  User Story to check Mom's death date before birth date of Child
+0 NOTE User Story to check Mom's death date before birth date of Child
 
 0 NOTE Mom with death date before birth date of kid@HC-3-1-F1@
 0 Number of Errors1
@@ -95,4 +173,5 @@
 
 0 NOTE Mom with birth date later birth date of kid@HC-3-1-F3@
 Number of Errors1
+
 

@@ -1,0 +1,291 @@
+
+============Checking if all indvidual records match family records:============
+     Error #1 found on individual @SG-3-US10-A@
+          Family @SG-3-US10-F1@ doesn't conatin a record of a husband that matches current individual
+
+     Individual Record
+          ID: @SG-3-US10-A@
+          Name: Alfred
+          Gener: M
+          BirthDay: 21 SEP 1943
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F1@
+          Child to Family: null
+     Family Record
+          ID: @SG-3-US10-F1@
+          Husband: null
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+---------------------------------------------------------------
+     Error #2 found on individual @SG-3-US10-AW@
+          Family's @SG-3-US10-F1@ record of the wife doesn't match the current indvidual
+
+     Individual Record
+          ID: @SG-3-US10-AW@
+          Name: Angela
+          Gener: F
+          BirthDay: 19 MAY 2014
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F1@
+          Child to Family: null
+     Family Record
+          ID: @SG-3-US10-F1@
+          Husband: null
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+---------------------------------------------------------------
+     Error #3 found on individual @SG@
+          There is no family record that matches this spouse
+     Individual Record
+          ID: @SG@
+          Name: test
+          Gener: F
+          BirthDay: null
+          Death Date: null
+          Spouse to Family: Test
+          Child to Family: null
+     List of all family IDS
+          test2
+          @SG-3-US10-F1@
+          @SG-3-US10-F2@
+          @SG-3-US10-F3@
+          @SG-3-US10-F4@
+          @HC-3-1-F1@
+          @HC-3-1-F2@
+          @HC-3-1-F3@
+---------------------------------------------------------------
+     Error #4 found on individual @SG-3-US10-BW@
+          There are no children listed in the family
+
+     Individual Record
+          ID: @SG-3-US10-BW@
+          Name: Breanna
+          Gener: F
+          BirthDay: 28 OCT 1925
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F2@
+          Child to Family: @SG-3-US10-F3@
+     Family Record
+          ID: @SG-3-US10-F2@
+          Husband: @SG-3-US10-B@
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 1
+               ID: @SG-3-US10-C@       Name: Chris
+---------------------------------------------------------------
+     Error #5 found on individual @SG-3-US10-CW@
+          None of the children id's match the id of the individual
+
+     Individual Record
+          ID: @SG-3-US10-CW@
+          Name: Cathy
+          Gener: F
+          BirthDay: 21 SEP 1943
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F3@
+          Child to Family: @SG-3-US10-F2@
+     Family Record
+          ID: @SG-3-US10-F3@
+          Husband: @SG-3-US10-C@
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 0
+---------------------------------------------------------------
+     Error #6 found on individual @SG-3-US10-CW@
+          Family's @SG-3-US10-F3@ record of the wife doesn't match the current indvidual
+
+     Individual Record
+          ID: @SG-3-US10-CW@
+          Name: Cathy
+          Gener: F
+          BirthDay: 21 SEP 1943
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F3@
+          Child to Family: @SG-3-US10-F2@
+     Family Record
+          ID: @SG-3-US10-F3@
+          Husband: @SG-3-US10-C@
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 0
+---------------------------------------------------------------
+============Checking if all family records match indvidual records:============
+     Error #1 Found on family @SG-3-US10-F1@ on child @SG-3-US10-C@
+          The child points to an indvidual whose records don't match
+
+          Should be child of @SG-3-US10-F1@ but listed as child of @SG-3-US10-F2@
+
+     Family Record
+          ID: @SG-3-US10-F1@
+          Husband: null
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+               ID: @SG-3-US10-B@       Name: Ben
+               ID: @SG-3-US10-C@       Name: Chris
+     Individual Record
+          ID: @SG-3-US10-C@
+          Name: Chris
+          Gener: M
+          BirthDay: 21 SEP 1943
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F3@
+          Child to Family: @SG-3-US10-F2@
+---------------------------------------------------------------
+     Error #2 found on family @SG-3-US10-F1@
+          Family's @SG-3-US10-F1@ wife doesn't match individual's records
+
+     Family Record
+          ID: @SG-3-US10-F1@
+          Husband: null
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+     Individual Record
+          ID: @SG-3-US10-BW@
+          Name: Breanna
+          Gener: F
+          BirthDay: 28 OCT 1925
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F2@
+          Child to Family: @SG-3-US10-F3@
+---------------------------------------------------------------
+     Error #3 found on family @SG-3-US10-F3@
+          Family's @SG-3-US10-F3@ wife doesn't match individual's records
+
+     Family Record
+          ID: @SG-3-US10-F3@
+          Husband: @SG-3-US10-C@
+          Wife: @SG-3-US10-BW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 0
+     Individual Record
+          ID: @SG-3-US10-BW@
+          Name: Breanna
+          Gener: F
+          BirthDay: 28 OCT 1925
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F2@
+          Child to Family: @SG-3-US10-F3@
+---------------------------------------------------------------
+     Error #4 Found on family @SG-3-US10-F4@ on child @SG-3-US10-AW@
+          The child points to an individual without a child tag
+
+          Should be child of @SG-3-US10-F4@ but child tag is Null
+
+     Family Record
+          ID: @SG-3-US10-F4@
+          Husband: null
+          Wife: @SG-3-US10-DW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 1
+               ID: @SG-3-US10-AW@       Name: Angela
+     Individual Record
+          ID: @SG-3-US10-AW@
+          Name: Angela
+          Gener: F
+          BirthDay: 19 MAY 2014
+          Death Date: null
+          Spouse to Family: @SG-3-US10-F1@
+          Child to Family: null
+---------------------------------------------------------------
+     Error #5 Found on family @SG-3-US10-F4@ on child Troll
+          Indvidual doesn't exist
+
+     Family Record
+          ID: @SG-3-US10-F4@
+          Husband: null
+          Wife: @SG-3-US10-DW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+               ID: @SG-3-US10-AW@
+               ID: Troll
+     List of all Individual IDS
+          @SG-3-US10-A@
+          @SG-3-US10-AW@
+          @SG@
+          @SG2@
+          @SG-3-US10-B@
+          @SG-3-US10-BW@
+          @SG-3-US10-C@
+          @SG-3-US10-CW@
+          @HC-3-1-B@
+          @HC-3-1-C@
+          @HC-3-1-A2@
+          @HC-3-1-B1@
+          @HC-3-1-B2@
+          @HC-3-1-C1@
+          @HC-3-1-I1@
+          @HC-3-1-I2@
+          @HC-3-1-A@
+---------------------------------------------------------------
+     Error #6 found on family @SG-3-US10-F4@
+          Family @SG-3-US10-F4@ points to a wife that doesn't exist
+
+     Family Record
+          ID: @SG-3-US10-F4@
+          Husband: null
+          Wife: @SG-3-US10-DW@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 1
+     List of all Individual IDS
+          @SG-3-US10-A@
+          @SG-3-US10-AW@
+          @SG@
+          @SG2@
+          @SG-3-US10-B@
+          @SG-3-US10-BW@
+          @SG-3-US10-C@
+          @SG-3-US10-CW@
+          @HC-3-1-B@
+          @HC-3-1-C@
+          @HC-3-1-A2@
+          @HC-3-1-B1@
+          @HC-3-1-B2@
+          @HC-3-1-C1@
+          @HC-3-1-I1@
+          @HC-3-1-I2@
+          @HC-3-1-A@
+---------------------------------------------------------------
+     Error #7 found on family @HC-3-1-F3@
+          Family's @HC-3-1-F3@ husband doesn't match individual's records
+
+     Family Record
+          ID: @HC-3-1-F3@
+          Husband: @HC-3-1-I1@
+          Wife: @HC-3-1-C@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 1
+     Individual Record
+          ID: @HC-3-1-I1@
+          Name: I1
+          Gener: M
+          BirthDay: 21 SEP 1920
+          Death Date: null
+          Spouse to Family: @HC-3-1-F1@
+          Child to Family: null
+---------------------------------------------------------------
+no Children for family test2
+Mom with birth date later birth date of kid@SG-3-US10-F1@
+Number of Errors1
+Mom with birth date later birth date of kid@SG-3-US10-F1@
+Number of Errors2
+Mom without Birth Date
+Child without Birth Date
+in the family 2, the age of the monther is less than 5
+her name is:Angela
+there is no monther birthday date existing! there is no birthday date existing! 
