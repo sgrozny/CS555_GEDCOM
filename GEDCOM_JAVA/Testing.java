@@ -30,6 +30,9 @@ public class Testing {
           numErrors+=StasSprint3.famRecordsMatchInd(indArr,Itotal, famArr, Ftotal);
           numErrors+=HimabinduSprint3.birthBeforeMomBirth(famArr, indArr, Ftotal, Itotal);
           numErrors+=HimabinduSprint3.birthBeforeMomDeath(famArr, indArr, Ftotal, Itotal);
+          numErrors+=lesprint3.userstory18(indArr, famArr, Itotal, Ftotal);
+          lesprint3.userstory22(indArr, famArr, Itotal, Ftotal);
+          
           System.out.println();
         System.out.println("***********************************************");
         System.out.println("Total number of errors found was: " + numErrors);     

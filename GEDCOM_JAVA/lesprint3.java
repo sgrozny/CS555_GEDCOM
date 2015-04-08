@@ -15,13 +15,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 public class lesprint3 {
-    public static void userstory18(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal ){
-       try{
+    public static int userstory18(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal ){
+       int numerrors =0;
+        try{
         Integer w;     
         for(int i=0;i<Ftotal+1;i++){
               w=famArr[i].getWife();
               if(w!=null){
-              String wifebdate=indArr[i].getBDay();
+              String wifebdate=indArr[w].getBDay();
                
               Date wifebir=new SimpleDateFormat("dd MMM yyyy").parse(wifebdate);
              
@@ -43,13 +44,14 @@ public class lesprint3 {
      catch(Exception exc){
               System.out.print("there is no monther birthday date existing! ");
            }
+        return numerrors;
     }
     public static void userstory22(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
      try{
          for(int i=0;i<Itotal+1;i++){
             // System.out.println("BirthDay: " + indArr[i].BDay);
          Calendar   mycalendar=Calendar.getInstance();
-              String y=String.valueOf(mycalendar.get(Calendar.YEAR));
+              String y=String.valueOf(mycalendar.get(Calendar.YEAR));   
               int b=Integer.parseInt(y);
              String datebir=indArr[i].getBDay();
              Date date=new SimpleDateFormat("dd MMM yyyy").parse(datebir);
