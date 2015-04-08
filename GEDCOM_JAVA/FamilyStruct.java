@@ -19,14 +19,19 @@ public class FamilyStruct {
         String MarriedDate;
         String DivDate;
         String WhichDate;
+        String childIds[] = new String[30];
         Integer children[] = new Integer[30];
         int numChildren;
+        String husbS;
+        String wifeS;        
         boolean visited;
+        int numcIds;
         /**
          *
          */
         public family(){
             numChildren=0;
+            numcIds=0;
         }
         private void setNumChildren(){
             int i=0;
@@ -69,7 +74,7 @@ public class FamilyStruct {
          *
          * @return
          */
-        public int getHusb(){
+        public Integer getHusb(){
             return husband;
         }
          /**
@@ -147,6 +152,11 @@ public class FamilyStruct {
             }
             else return -1;
         }
+        public void addChildId(String childid,int index){
+            childIds[index]=childid;
+            numcIds++;
+        }
+                
 //        public boolean hasChild(String cID){
 //            getNumChildren();
 //            boolean childExists= false;

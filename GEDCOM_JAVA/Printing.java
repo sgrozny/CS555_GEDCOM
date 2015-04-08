@@ -53,6 +53,7 @@ public class Printing {
        }
     }
     public static void PrintIndividualDetails(IndividualStruct.individual indArr[], int i, int tabs){
+            print(tabs-1, "Individual Record");
             print(tabs,"ID: " + indArr[i].getID());
             print(tabs,"Name: " + indArr[i].getName());
             print(tabs,"Gener: " + indArr[i].gender);
@@ -60,6 +61,38 @@ public class Printing {
             print(tabs,"Death Date: " + indArr[i].DDay);
             print(tabs,"Spouse to Family: " +indArr[i].FAMS);
             print(tabs,"Child to Family: " +indArr[i].FAMC);
+    }
+    public static void ListAllIndividuals(IndividualStruct.individual indArr[], int iTotal, int tabs){
+        print(tabs-1, "List of all Individual IDS");  
+        for(int i=0;i<iTotal+1;i++){
+            print(tabs,indArr[i].ID);
+        }
+    }
+
+    public static void PrintFamilyDetails(FamilyStruct.family famArr[], int f, int tabs, IndividualStruct.individual indArr[], boolean printkids, boolean useraw){
+        print(tabs-1, "Family Record");
+        print(tabs, "ID: " + famArr[f].ID);
+        print(tabs, "Husband: " + famArr[f].husbS);
+        print(tabs, "Wife: " + famArr[f].wifeS);
+        print(tabs, "Married Date: " + famArr[f].getMarriedDate());
+        print(tabs, "Divorce Date: " + famArr[f].getDivDate());
+        if(!useraw){
+            print(tabs, "Number of Children: " + famArr[f].getNumChildren());
+        }
+        if (printkids){
+            if(useraw){
+                print(tabs, "Number of Children: " + famArr[f].numcIds);
+                for(int i=0;i<famArr[f].numcIds;i++){
+                    print(tabs+1,"ID: " + famArr[f].childIds[i]);
+                }
+            }
+            else{
+                for(int i=0;i<famArr[f].getNumChildren();i++){
+                    print(tabs+1,"ID: " + indArr[famArr[f].getChild(i)].ID+ "       Name: " +indArr[famArr[f].getChild(i)].name);
+                }
+            }
+                
+        }
     }
     public static void PritnAllChildren(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
          for(int i=0;i<Ftotal+1;i++){
@@ -82,7 +115,13 @@ public class Printing {
         System.out.println(tabS+txt);
     }
      public static void printHeader(String header){
-         String x="-----------";
+         String x="============";
          System.out.println(x+header+x);
+     }
+     public static void ListAllFamilies(FamilyStruct.family famArr[], int fT, int tabs){
+         print(tabs-1, "List of all family IDS");   
+         for(int f=0;f<fT+1;f++){
+                print(tabs,famArr[f].ID);
+            }
      }
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class CS555_GED {
     
-    static int iCounter=-1, fCounter=-1, cCounter=0;;
+    static int iCounter=-1, fCounter=-1, cCounter=0, cCounter2=0;
     static String TAGS[] = new String [16];
     static IndividualStruct.individual indArr[] = new IndividualStruct.individual[5000];
     static FamilyStruct.family famArr[] = new FamilyStruct.family[1000];
@@ -22,7 +22,8 @@ public class CS555_GED {
         //Postcondition: The oustput will print all original GED Lines with the addition of the level number and tag
         
         //String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
-        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555_GED/src/cs555_ged/TEST3.ged";
+        
+        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555_GED/src/cs555_ged/TEST4.ged";
         Read_GED_File(Ged_Filename);
         
         Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter);
@@ -96,6 +97,7 @@ public class CS555_GED {
             }
             else if(lvl.equals("0")&& tag.equals("FAM")){
                 cCounter=0;
+                cCounter2=0;
                 fCounter++;
                 famArr[fCounter]=new FamilyStruct.family();
              //   famArr[fCounter].setKids();
@@ -157,12 +159,14 @@ public class CS555_GED {
                     if(id>=0){
                         famArr[fCounter].setHusb(id);
                     }
+                    famArr[fCounter].husbS=arguement;
                  break;
                 case "WIFE":
                     id= findIndiID(arguement);
                     if(id>=0){
                         famArr[fCounter].setWife(id);
                     }
+                    famArr[fCounter].wifeS=arguement;
                  break;
                 case "DIV":
                     famArr[fCounter].setDate(tag);
@@ -172,10 +176,12 @@ public class CS555_GED {
                     break;
                 case "CHIL":
                     id= findIndiID(arguement);
-                    if(id>=0){
+                    if(id>-1){
                         famArr[fCounter].addChild(id, cCounter);
                         cCounter++;
                     }
+                    famArr[fCounter].addChildId(arguement,cCounter2);
+                    cCounter2++;
                     break;
                 case "TRLR":
                     //Shuold we cut down array here?
