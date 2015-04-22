@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  *
- * @author zhang_le
+ * @author le_zhang
  */
 public class lesprint4 {
     public static int Userstory20(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
