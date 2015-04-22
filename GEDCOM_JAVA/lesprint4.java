@@ -5,60 +5,75 @@
  */
 package cs555_ged;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author zhang_le
  */
 public class lesprint4 {
     public static int Userstory20(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
-     Printing.printHeader("Checking whether Indvidual is both a spouse and a child to same family");
-        int numErrors=0;
-    Integer w,h;
-    String ID;
-  //  Integer c;
-    Integer k;
-    String wifeid;
-    String husbandid;
-    String kidid;
-    
-    for(int i=0;i<Ftotal+1;i++){
-        
-            ID=famArr[i].getID();
-           w=famArr[i].getWife();
-           h=famArr[i].getHusb();
-           
-         
-           for(int j=0;j<famArr[i].getNumChildren();j++){
-            kidid=indArr[famArr[i].getChild(j)].ID;
-             
-            //System.out.println("id is:"+kidid);
-           if(w!=null&&h!=null&&kidid!=null){
-            wifeid=indArr[w].getID();
-            husbandid=indArr[h].getID();
-           
-            if(kidid==wifeid){
-             System.out.println(" The relationship is wrong, because the wife ID equals child ID!"); 
-              System.out.println("The wife'd ID IS:"+wifeid+", the child's ID is:"+kidid +". It is the ID of "+indArr[w].getName());
-               
-                      numErrors++; 
-         
-           
-            }
-            else if(kidid==husbandid){
-                 
-                 System.out.println(" The relationship is wrong, because the husband ID equals child ID!"); 
-              System.out.println("The husband'd ID IS:"+husbandid+", the child's ID is:"+kidid+". It is the ID of "+indArr[h].getName() );
+     Printing.printHeader("Checking whether the age of husbands and wives are older than 18 ");
+    int numErrors=0;
+     try{
+        Integer w;     
+        Integer h;
+        for(int i=0;i<Ftotal+1;i++){
+              w=famArr[i].getWife();
+              h=famArr[i].getHusb();
+              if(w!=null&&h!=null){
+              String husbdate=indArr[h].getBDay();       
+              String wifebdate=indArr[w].getBDay();
+               if(wifebdate!=null&&husbdate!=null){
+              Date wifebir=new SimpleDateFormat("dd MMM yyyy").parse(wifebdate);
+              Date husbir=new SimpleDateFormat("dd MMM yyyy").parse(husbdate);
               
-                      numErrors++; 
-            }
-            
+              Calendar   mycalendar=Calendar.getInstance();
+              String y=String.valueOf(mycalendar.get(Calendar.YEAR));
+              int b=Integer.parseInt(y);
+              int a=wifebir.getYear()+1900;
+              int c=husbir.getYear()+1900;
+              int wifeage=b-a;
+              int husage=b-c;
+              
+              if(wifeage<18){
+                 if(husage<18){
+                 System.out.println("In the family "+(i+1)+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
+                 Printing.PrintIndividualDetails(indArr,h,2);
+                 System.out.println("-------------------------------");
+                 numErrors++;
+                 }
+               System.out.println("In the family "+(i+1)+","+indArr[w].getName()+"'s age is "+wifeage+", less than 18,but she is a wife");
+                Printing.PrintIndividualDetails(indArr,w,2);
+                 System.out.println("-------------------------------");
+                numErrors++;
+              }
+              else if(husage<18){
+               System.out.println("in the family "+(i+1)+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
+             
+                Printing.PrintIndividualDetails(indArr, h, 2);
+                 System.out.println("-------------------------------");
+                 numErrors++;
+              }
+               }  
+              } 
+        }
+}
+        
+     catch(Exception exc){
+              System.out.print("there is no husbands and wives' birthday date existing! ");
+           }
+        //System.out.println("total number of errors is:"+numErrors);
+       
+    
            
+
+    System.out.println("the total number of errors is:"+numErrors);
+    return numErrors;
            }
-           }
-    }
-             System.out.println("the totoal number of errors is:"+numErrors);
-           return numErrors;
-           }
+    
     public static int Userstory24(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
         Printing.printHeader( "check whether in one family, there is only one husband but no wife " );     
         int numErrors=0;
@@ -86,6 +101,8 @@ public class lesprint4 {
     System.out.println("the total number of errors is:"+numErrors);
     return numErrors;
            }
+    
+    
     }
    
    
