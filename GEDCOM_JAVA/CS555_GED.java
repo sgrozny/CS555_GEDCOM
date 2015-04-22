@@ -15,25 +15,27 @@ public class CS555_GED {
     static String TAGS[] = new String [16];
     static IndividualStruct.individual indArr[] = new IndividualStruct.individual[5000];
     static FamilyStruct.family famArr[] = new FamilyStruct.family[1000];
-    
+    static boolean hsbflg=false,wfflag=false,prntfmdt=false;
     public static void main(String[] args) {
+        int initErrors=0;
         //Reads the lines of a ged file
         //Precondition: The GED file is in the specified location with the proper name
         //Postcondition: The oustput will print all original GED Lines with the addition of the level number and tag
         
         //String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
         
-        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555_GED/src/cs555_ged/TEST4.ged";
-        Read_GED_File(Ged_Filename);
+        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555/src/cs555_ged/lezhangtest.ged";
+        initErrors=Read_GED_File(Ged_Filename);
         
-        Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter);
+        Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter,initErrors);
         
         
         //StasSprint1.MoreThan15Kids(famArr,fCounter);
        
     }
-    private static void Read_GED_File(String fileName){
-                 initTagArray(); //Loads in valid tags      
+    private static int Read_GED_File(String fileName){
+                 initTagArray(); //Loads in valid tags   
+                  int numErrors=0;
         try {
                 //Read file
 		File file = new File(fileName);
@@ -43,8 +45,13 @@ public class CS555_GED {
 		String line;
                 //While there are lines then call the print method.
                 
+        Printing.printHeader("Parsing .GED File and looking for intial errors...");
 		while ((line = bufferedReader.readLine()) != null) {
-                        Parse_GED_File(line);
+                    
+                        if(Parse_GED_File(line,numErrors)){
+                            numErrors++;
+                             
+                        }
 		}
                 
 		fileReader.close(); //close file reader
@@ -55,13 +62,17 @@ public class CS555_GED {
 		}
       findFamID();
       setNumChildren();
+      return numErrors;
     }
-    private static void Parse_GED_File(String inputline){
+    private static boolean Parse_GED_File(String inputline, int errorCount){
+        
         /*Private Method that will print 3 lines 
         * Precondition: Given a line from a Gedcom file
         * Postcondition: Print the orignal line, print level-number, tag
         */
         //System.out.println(inputline);//Print original line
+        errorCount++;
+        boolean iserror=false;
         if (!(inputline.equals(""))){
         int index;  //index of first " "
         int i;// used in for loop
@@ -70,6 +81,7 @@ public class CS555_GED {
         String  dateT; //
         String arguement=""; //holds the arguement of the tag
         boolean valid=false;    // checks if tag is valid (default is false)
+       
         index= inputline.indexOf(" ");  // find index of first space
         lvl=inputline.substring(0,index);   //print the level number
         int index2; // index of second " "
@@ -96,10 +108,18 @@ public class CS555_GED {
                 indArr[iCounter]= new IndividualStruct.individual();
             }
             else if(lvl.equals("0")&& tag.equals("FAM")){
+                if (prntfmdt){
+                     
+                    Printing.PrintFamilyDetails(famArr,fCounter,1,indArr,true,false); 
+                    Printing.print(0,"----------------------------------");
+                }
                 cCounter=0;
                 cCounter2=0;
                 fCounter++;
                 famArr[fCounter]=new FamilyStruct.family();
+                hsbflg= false;
+                wfflag=false;
+                prntfmdt=false;
              //   famArr[fCounter].setKids();
             }
             switch (tag){
@@ -155,18 +175,40 @@ public class CS555_GED {
                     
                     break;
                 case "HUSB":
-                     id= findIndiID(arguement);
-                    if(id>=0){
-                        famArr[fCounter].setHusb(id);
+                    if (hsbflg){
+                        iserror=true; 
+                       Printing.print(1, "Error #"+errorCount +":Trying to add a second husband to family " + famArr[fCounter].ID + " caused an error. Keeping original husband");
+                       Printing.print(2, "Original husband's ID = " +famArr[fCounter].husbS + ". The new husband's ID =" + arguement);
+                       prntfmdt=true;
+                                      
                     }
-                    famArr[fCounter].husbS=arguement;
+                    else{
+                        hsbflg=true; 
+                        id= findIndiID(arguement);
+                        if(id>=0){
+                            famArr[fCounter].setHusb(id);
+                        }
+                        famArr[fCounter].husbS=arguement;
+
+                    }
+                     
                  break;
                 case "WIFE":
-                    id= findIndiID(arguement);
-                    if(id>=0){
-                        famArr[fCounter].setWife(id);
+                    if (wfflag){
+                        iserror=true;  
+                       Printing.print(1, "Error #"+errorCount +":Trying to add a second wife to family " + famArr[fCounter].ID + " caused an error. Keeping original wife");
+                       Printing.print(2, "Original wife's ID = " +famArr[fCounter].wifeS + ". The new wife's ID =" + arguement);
+                       prntfmdt=true;
+                                      
                     }
-                    famArr[fCounter].wifeS=arguement;
+                    else{
+                        wfflag=true; 
+                        id= findIndiID(arguement);
+                        if(id>=0){
+                            famArr[fCounter].setWife(id);
+                        }
+                        famArr[fCounter].wifeS=arguement;
+                        }
                  break;
                 case "DIV":
                     famArr[fCounter].setDate(tag);
@@ -184,12 +226,19 @@ public class CS555_GED {
                     cCounter2++;
                     break;
                 case "TRLR":
-                    //Shuold we cut down array here?
+                    if (prntfmdt){
+                        
+                    Printing.PrintFamilyDetails(famArr,fCounter,1,indArr,true,false);
+                    Printing.print(0,"----------------------------------");
+                     
+                }
+                    return iserror;
                 default:
                     break;
             }
             }
         }
+        return iserror;
     }
     private static String formatName(String name){
         //Removes the "/" from the lastnames
