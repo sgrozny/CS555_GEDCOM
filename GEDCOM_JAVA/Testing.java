@@ -22,8 +22,8 @@ public class Testing {
 //        numErrors+=HimabinduSprint1.missingBirthDate(indArr, Itotal//
 //        numErrors+=LeSprint1.userstory1(indArr, famArr, Ftotal);
 //        numErrors+=LEZHANGsprint2.Userstory06(indArr, famArr, Ftotal);
-//       numErrors+=lesprint4.Userstory20(indArr, famArr, Itotal, Ftotal);
-        
+       numErrors+=lesprint4.Userstory20(indArr, famArr, Itotal, Ftotal);
+        numErrors+=lesprint4.Userstory24(indArr, famArr, Itotal, Ftotal);
         numErrors+=lesprint3.userstory18(indArr, famArr, Itotal, Ftotal);
         numErrors+=lesprint3.userstory22(indArr, famArr, Itotal, Ftotal);
 //          numErrors+=StasSprint2.ChildisItsparent(indArr, Itotal, famArr, Ftotal);
@@ -37,6 +37,8 @@ public class Testing {
         numErrors+=StasSprint4.Polygamy(indArr, Itotal, famArr, Ftotal);
  //         numErrors+=HimabinduSprint3.birthBeforeMomBirth(famArr, indArr, Ftotal, Itotal);
  //         numErrors+=HimabinduSprint3.birthBeforeMomDeath(famArr, indArr, Ftotal, Itotal);
+            numErrors+=HimabinduSprint4.ChildrensGap(famArr, indArr, Ftotal, Itotal);
+            numErrors+=HimabinduSprint4.birthBeforeDeath(indArr, Itotal);
  //         numErrors+=lesprint3.userstory18(indArr, famArr, Itotal, Ftotal);
  //         lesprint3.userstory22(indArr, famArr, Itotal, Ftotal);
           

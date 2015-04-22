@@ -26,6 +26,7 @@ public class StasSprint4 {
             System.out.println("-------------------------------------------------------------------------------------------");                            
             } 
         }
+    System.out.println("Number of Errors in which an individual was a spouse to several families: "+numErrors);
     return numErrors;
     }
     public static int isPolygamist(IndividualStruct.individual indArr[], FamilyStruct.family famArr[],  int Ftotal, int i, String ID, int errorCounter){
@@ -56,7 +57,7 @@ public class StasSprint4 {
                                             }
                                             else{
                                                 errorCounter++;
-                                                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                                                System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
                                                 Printing.print(2, "Error #" +errorCounter +": Above individual is also found in family " + famArr[f].ID);
 
                                             }
@@ -148,6 +149,7 @@ public class StasSprint4 {
                 }
             }
         }
+        
        return errorCounter; 
     }
 }

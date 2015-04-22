@@ -40,18 +40,18 @@ public class lesprint4 {
               
               if(wifeage<18){
                  if(husage<18){
-                 System.out.println("In the family "+(i+1)+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
+                 System.out.println("In family "+famArr[i].ID+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
                  Printing.PrintIndividualDetails(indArr,h,2);
                  System.out.println("-------------------------------");
                  numErrors++;
                  }
-               System.out.println("In the family "+(i+1)+","+indArr[w].getName()+"'s age is "+wifeage+", less than 18,but she is a wife");
+               System.out.println("In family "+famArr[i].ID+","+indArr[w].getName()+"'s age is "+wifeage+", less than 18,but she is a wife");
                 Printing.PrintIndividualDetails(indArr,w,2);
                  System.out.println("-------------------------------");
                 numErrors++;
               }
               else if(husage<18){
-               System.out.println("in the family "+(i+1)+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
+               System.out.println("In family "+famArr[i].ID+","+indArr[h].getName()+"'s age is "+husage+", less than 18,but he is a husband");
              
                 Printing.PrintIndividualDetails(indArr, h, 2);
                  System.out.println("-------------------------------");
@@ -75,7 +75,7 @@ public class lesprint4 {
            }
     
     public static int Userstory24(IndividualStruct.individual indArr[], FamilyStruct.family famArr[], int Itotal, int Ftotal){
-        Printing.printHeader( "check whether in one family, there is only one husband but no wife " );     
+        Printing.printHeader( "Check whether in one family, there is only one husband but no wife " );     
         int numErrors=0;
                Integer w,h;
     
@@ -84,15 +84,19 @@ public class lesprint4 {
            h=famArr[i].getHusb();
            if(w==null){
            if(h==null){
-               System.out.println("In the family "+famArr[i].getID()+", there are no wife and husband existing !");
+               if (famArr[i].getNumChildren()>0){
+               System.out.println("In the family "+famArr[i].getID()+", there are is wife and husband existing !");
                Printing.PrintFamilyDetails(famArr,i,2,indArr,true,false);
             numErrors++;
+               }
            }
           
            else{
-            System.out.println("In the family"+famArr[i].getID()+", there are no wife existing !");
+               if (famArr[i].getNumChildren()>0){
+            System.out.println("In the family "+famArr[i].getID()+", there are is wife existing !");
                Printing.PrintFamilyDetails(famArr,i,2,indArr,true,false);
             numErrors++;
+               }
            }
            }
     }

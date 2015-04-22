@@ -9,6 +9,7 @@ public class HimabinduSprint4
 	public static int birthBeforeDeath(IndividualStruct.individual indArr[],int Itotal)
 	{
 		int numErrors=0;
+                Printing.printHeader("Checking to make sure birth date is before death date");
 	try{
 		String birthDate=null;
 		String deathDate=null;;
@@ -40,7 +41,7 @@ public class HimabinduSprint4
 				System.out.println("Individual with out Birth or Death date");
 			}
 
-		System.out.println("Number of Errors :"+numErrors);
+		System.out.println("Number of Errors in which death comes before birth:"+numErrors);
 		return numErrors;
 	}
 	
@@ -94,7 +95,7 @@ public class HimabinduSprint4
 		{
 			System.out.println("Individual with out Birth or Death date");
 		}
-		
+		System.out.println("Number of Errors in which the birth gap between children is very unlikely: "+numErrors);
 		return numErrors;
 	}
 

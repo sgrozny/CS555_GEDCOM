@@ -1,0 +1,203 @@
+run:
+============Parsing .GED File and looking for intial errors...============
+     Error #1:Trying to add a second husband to family @sg/lz3-4-US10-F7@ caused an error. Keeping original husband
+          Original husband's ID = @sg/lz3-4-US10-AW@. The new husband's ID =@sg/lz3-4-US10-B@
+Family Record
+     ID: @sg/lz3-4-US10-F7@
+     Husband: @sg/lz3-4-US10-AW@
+     Wife: null
+     Married Date: 21 JUN 2001
+     Divorce Date: null
+     Number of Children: 0
+----------------------------------
+     Error #2:Trying to add a second wife to family @sg/lz3-4-US10-F8@ caused an error. Keeping original wife
+          Original wife's ID = @sg/lz3-4-US10-AW@. The new wife's ID =@sg/lz3-4-US10-B@
+Family Record
+     ID: @sg/lz3-4-US10-F8@
+     Husband: null
+     Wife: @sg/lz3-4-US10-AW@
+     Married Date: 21 JUN 2001
+     Divorce Date: 31 OCT 1947
+     Number of Children: 0
+----------------------------------
+============Checking whether the age of husbands and wives are older than 18 ============
+In family @sg/lz3-4-US10-F10@,Chris's age is 10, less than 18,but he is a husband
+     Individual Record
+          ID: @sg/lz3-4-US10-I@
+          Name: Chris
+          Gener: M
+          BirthDay: 21 SEP 2005
+          Death Date: null
+          Spouse to Family: @sg/lz3-4-US10-F10@
+          Child to Family: @sg/lz3-4-US10-F2@
+-------------------------------
+In family @sg/lz3-4-US10-F10@,Cathy's age is 4, less than 18,but she is a wife
+     Individual Record
+          ID: @sg/lz3-4-US10-IW@
+          Name: Cathy
+          Gener: F
+          BirthDay: 21 SEP 2011
+          Death Date: null
+          Spouse to Family: @sg/lz3-4-US10-F10@
+          Child to Family: null
+-------------------------------
+the total number of errors is:2
+============Check whether in one family, there is only one husband but no wife ============
+In the family @HC-4-1-F1@, there are is wife existing !
+     Family Record
+          ID: @HC-4-1-F1@
+          Husband: @HC-4-1-A@
+          Wife: @HC-4-1-C@
+          Married Date: null
+          Divorce Date: null
+          Number of Children: 2
+               ID: @HC-4-1-D@       Name: D
+               ID: @HC-4-1-K@       Name: K
+the total number of errors is:1
+============Checking if mother's age is less than 5 years old============
+Error number 0: In the family 2,Angela's age is 145, but her kid Angelas kid's age is 142
+So when her kid was born, she was only 3 years old,which is less than 5 years old!
+     Individual Record
+          ID: @sg/lz3-4-US10-AW@
+          Name: Angela
+          Gener: F
+          BirthDay: 19 MAY 1870
+          Death Date: null
+          Spouse to Family: @sg/lz3-4-US10-F2@
+          Child to Family: null
+     Individual Record
+          ID: @sg/lz3-4-US10-F@
+          Name: Angelas kid
+          Gener: F
+          BirthDay: 19 MAY 1873
+          Death Date: null
+          Spouse to Family: null
+          Child to Family: @sg/lz3-4-US10-F2@
+-------------------------------
+============Checking if Indvidual's age is over 130 years old============
+     Error number:1 Angela's age is 145,which is older than 130
+     Individual Record
+          ID: @sg/lz3-4-US10-AW@
+          Name: Angela
+          Gener: F
+          BirthDay: 19 MAY 1870
+          Death Date: null
+          Spouse to Family: @sg/lz3-4-US10-F2@
+          Child to Family: null
+-------------------------------
+     Error number:2 Angelas kid's age is 142,which is older than 130
+     Individual Record
+          ID: @sg/lz3-4-US10-F@
+          Name: Angelas kid
+          Gener: F
+          BirthDay: 19 MAY 1873
+          Death Date: null
+          Spouse to Family: null
+          Child to Family: @sg/lz3-4-US10-F2@
+-------------------------------
+total number of people over 130 is:2
+============Checking to see if 1 person has multiple spouses============
+          Error #1: this individual appears as a wife in another family
+               Individual Record
+                    ID: @sg/lz3-4-US10-AW@
+                    Name: Angela
+                    Gener: F
+                    BirthDay: 19 MAY 1870
+                    Death Date: null
+                    Spouse to Family: @sg/lz3-4-US10-F2@
+                    Child to Family: null
+          Original family is @sg/lz3-4-US10-F2@. However she was also found in family @sg/lz3-4-US10-F6@
+Original                Family Record
+                    ID: @sg/lz3-4-US10-F2@
+                    Husband: @sg/lz3-4-US10-A@
+                    Wife: @sg/lz3-4-US10-AW@
+                    Married Date: 21 SEP 1974
+                    Divorce Date: null
+                    Number of Children: 2
+               Family Record
+                    ID: @sg/lz3-4-US10-F6@
+                    Husband: @sg/lz3-4-US10-B@
+                    Wife: @sg/lz3-4-US10-AW@
+                    Married Date: 21 JUN 2001
+                    Divorce Date: null
+                    Number of Children: 0
+-------------------------------------------------------------------------------------------
+          Error #2: this individual appears as a husband in another family
+               Individual Record
+                    ID: @sg/lz3-4-US10-B@
+                    Name: Ben
+                    Gener: M
+                    BirthDay: 28 OCT 1925
+                    Death Date: null
+                    Spouse to Family: @sg/lz3-4-US10-F3@
+                    Child to Family: null
+          Original family is @sg/lz3-4-US10-F3@. However he was also found in family @sg/lz3-4-US10-F5@
+Original               Family Record
+                    ID: @sg/lz3-4-US10-F3@
+                    Husband: @sg/lz3-4-US10-B@
+                    Wife: @sg/lz3-4-US10-CW@
+                    Married Date: 21 JUN 2001
+                    Divorce Date: null
+                    Number of Children: 0
+               Family Record
+                    ID: @sg/lz3-4-US10-F5@
+                    Husband: @sg/lz3-4-US10-B@
+                    Wife: null
+                    Married Date: 21 JUN 2001
+                    Divorce Date: null
+                    Number of Children: 0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          Error #3: Above individual is also found in family @sg/lz3-4-US10-F6@
+               Family Record
+                    ID: @sg/lz3-4-US10-F6@
+                    Husband: @sg/lz3-4-US10-B@
+                    Wife: @sg/lz3-4-US10-AW@
+                    Married Date: 21 JUN 2001
+                    Divorce Date: null
+                    Number of Children: 0
+-------------------------------------------------------------------------------------------
+Number of Errors in which an individual was a spouse to several families: 3
+============Chceking to make sure the gap between births is less than 90 or more than 145============
+     Error #1: There is an error in the birth gap of the individuals below, the gap is only 103 days.
+          Family Record
+               ID: @HC-4-1-F1@
+               Husband: @HC-4-1-A@
+               Wife: @HC-4-1-C@
+               Married Date: null
+               Divorce Date: null
+               Number of Children: 2
+                    ID: @HC-4-1-D@       Name: D
+                    ID: @HC-4-1-K@       Name: K
+          Individual Record
+               ID: @HC-4-1-K@
+               Name: K
+               Gener: F
+               BirthDay: 1 JAN 1945
+               Death Date: null
+               Spouse to Family: null
+               Child to Family: @HC-4-1-F1@
+          Individual Record
+               ID: @HC-4-1-D@
+               Name: D
+               Gener: F
+               BirthDay: 20 SEP 1944
+               Death Date: 4 JAN 1962
+               Spouse to Family: null
+               Child to Family: @HC-4-1-F1@
+Number of Errors in which the birth gap between children is very unlikely: 1
+============Checking to make sure birth date is before death date============
+     Error #1: the individual below has a death-date prior to a birth date
+     Individual Record
+          ID:  @HC-4-1-B@
+          Name: B
+          Gener: F
+          BirthDay: 19 MAY 1981
+          Death Date: 14 JUN 1980
+          Spouse to Family: null
+          Child to Family: null
+Number of Errors in which death comes before birth:1
+
+***********************************************
+Total number of errors found was: 13
+BUILD SUCCESSFUL (total time: 1 second)
+

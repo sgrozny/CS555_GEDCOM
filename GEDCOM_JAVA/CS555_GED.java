@@ -24,7 +24,7 @@ public class CS555_GED {
         
         //String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
         
-        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555/src/cs555_ged/lezhangtest.ged";
+        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555/src/cs555_ged/Sprint4Test.ged";
         initErrors=Read_GED_File(Ged_Filename);
         
         Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter,initErrors);
@@ -74,6 +74,7 @@ public class CS555_GED {
         errorCount++;
         boolean iserror=false;
         if (!(inputline.equals(""))){
+           
         int index;  //index of first " "
         int i;// used in for loop
         String lvl;
