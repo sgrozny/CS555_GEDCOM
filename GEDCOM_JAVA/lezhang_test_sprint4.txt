@@ -1,0 +1,41 @@
+user story 24 
+Only husband but no wife 
+
+============check whether in one family, there is only one husband but no wife ============
+In the family@lz-3-US10-F1@, there are no wife existing !
+     Family Record
+          ID: @lz-3-US10-F1@
+          Husband: @lz-3-US10-B@
+          Wife: null
+          Married Date: 21 SEP 1948
+          Divorce Date: 31 OCT 1947
+          Number of Children: 1
+               ID: @lz-3-US10-A@       Name: Alfred
+In the family@lz-3-US10-F2@, there are no wife existing !
+     Family Record
+          ID: @lz-3-US10-F2@
+          Husband: @lz-3-US10-A@
+          Wife: null
+          Married Date: 21 SEP 1974
+          Divorce Date: null
+          Number of Children: 2
+               ID: @lz-3-US10-F@       Name: Angelas kid
+               ID: @lz-3-US10-C@       Name: Chris
+the total number of errors is:2
+
+
+user story 20
+the age of husbands and wives must be older than 18 years old
+
+============Checking whether the age of husbands and wives are older than 18 ============
+In the family 3,Cathy's age is 4, less than 18,but she is a wife
+     Individual Record
+          ID: @lz-3-US10-CW@
+          Name: Cathy
+          Gener: M
+          BirthDay: 21 SEP 2011
+          Death Date: null
+          Spouse to Family: @lz-3-US10-F3@
+          Child to Family: null
+-------------------------------
+the total number of errors is:1
