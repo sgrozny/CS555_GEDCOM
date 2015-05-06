@@ -44,7 +44,7 @@ public class lesprint5 {
               long range1=Math.abs(wifeage-husage);
               
                if(range1>70){
-               System.out.println("in the family "+(i+1)+","+indArr[w].getName()+"'s age is "+wifeage+", but her husband "+indArr[h].getName()+"'s age is "+husage);
+               System.out.println("in the family "+famArr[i].ID+" ,"+indArr[w].getName()+"'s age is "+wifeage+", but her husband "+indArr[h].getName()+"'s age is "+husage);
                System.out.println("So the age range between husband and wife is "+range1+" ,which is greater than 70!");
                 Printing.PrintIndividualDetails(indArr,w,2);
                 Printing.PrintIndividualDetails(indArr,h,2);

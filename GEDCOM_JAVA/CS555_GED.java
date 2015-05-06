@@ -15,7 +15,7 @@ public class CS555_GED {
     static String TAGS[] = new String [16];
     static IndividualStruct.individual indArr[] = new IndividualStruct.individual[5000];
     static FamilyStruct.family famArr[] = new FamilyStruct.family[1000];
-    static boolean hsbflg=false,wfflag=false,prntfmdt=false;
+    static boolean hsbflg=false,wfflag=false,prntfmdt=false, marrflag=false;
     public static void main(String[] args) {
         int initErrors=0;
         //Reads the lines of a ged file
@@ -24,7 +24,7 @@ public class CS555_GED {
         
         //String  Ged_Filename = "C:/Users/Class2016/Documents/GitHub/CS555_GEDCOM/GEDCOM_JAVA/TEST.ged";
         
-        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555/src/cs555_ged/Sprint4Test.ged";
+        String  Ged_Filename ="C:/Users/Class2016/Documents/NetBeansProjects/CS555/src/cs555_ged/Sprint5Test.ged";
         initErrors=Read_GED_File(Ged_Filename);
         
         Testing.Test_Sprint1(indArr, famArr,iCounter,fCounter,initErrors);
@@ -111,7 +111,7 @@ public class CS555_GED {
             else if(lvl.equals("0")&& tag.equals("FAM")){
                 if (prntfmdt){
                      
-                    Printing.PrintFamilyDetails(famArr,fCounter,1,indArr,true,false); 
+                    Printing.PrintFamilyDetails(famArr,fCounter,2,indArr,true,false); 
                     Printing.print(0,"----------------------------------");
                 }
                 cCounter=0;
@@ -120,6 +120,7 @@ public class CS555_GED {
                 famArr[fCounter]=new FamilyStruct.family();
                 hsbflg= false;
                 wfflag=false;
+                marrflag=false;
                 prntfmdt=false;
              //   famArr[fCounter].setKids();
             }
@@ -170,6 +171,19 @@ public class CS555_GED {
                             famArr[fCounter].setMarriedDate(arguement);
                             famArr[fCounter].setDate("");
                         }
+                        else if(famArr[fCounter].secondMarr.equals("MARR")){
+                            famArr[fCounter].secondMarr=arguement;
+                            if (marrflag){
+                           //     Printing.print(1, "Second marriage date = " + famArr[fCounter].secondMarr);
+                            }
+                           
+                        }
+                        else if(marrflag){
+                            Printing.print(2, "Third Marriage date = " + arguement);
+                            prntfmdt=true;
+                        }
+                        
+  
                     break;
                 case "FAM":
                     famArr[fCounter].setID(arguement);
@@ -197,7 +211,7 @@ public class CS555_GED {
                 case "WIFE":
                     if (wfflag){
                         iserror=true;  
-                       Printing.print(1, "Error #"+errorCount +":Trying to add a second wife to family " + famArr[fCounter].ID + " caused an error. Keeping original wife");
+                       Printing.print(1, "Error #"+errorCount +" :Trying to add a second wife to family " + famArr[fCounter].ID + " caused an error. Keeping original wife");
                        Printing.print(2, "Original wife's ID = " +famArr[fCounter].wifeS + ". The new wife's ID =" + arguement);
                        prntfmdt=true;
                                       
@@ -215,7 +229,34 @@ public class CS555_GED {
                     famArr[fCounter].setDate(tag);
                     break;
                 case "MARR":
-                    famArr[fCounter].setDate(tag);
+                   
+                    if (marrflag){
+                        iserror=true;
+                        Printing.print(1, "Error #" + errorCount + " :Trying to add a third marriage date without divorce date to family" + famArr[fCounter].ID);
+                        Printing.print(2, "Original marriage date = " + famArr[fCounter].MarriedDate);
+                      
+                        if ( famArr[fCounter].secondMarr!=null){
+                            
+                            Printing.print(2, "Second marriage date = " + famArr[fCounter].secondMarr);
+                        }
+                    }
+                    else{
+                        if (famArr[fCounter].DivDate== null){
+                            
+                               if((famArr[fCounter].MarriedDate!=null)){
+                                    
+                                    famArr[fCounter].secondMarr=tag;
+                                    marrflag=true;
+                               }
+                               else{
+                                    famArr[fCounter].setDate(tag); 
+                               }
+                        }
+                    
+ 
+                    }
+                    
+                    
                     break;
                 case "CHIL":
                     id= findIndiID(arguement);

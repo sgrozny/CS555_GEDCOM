@@ -23,8 +23,10 @@ public class FamilyStruct {
         Integer children[] = new Integer[30];
         int numChildren;
         String husbS;
-        String wifeS;        
+        String wifeS;   
+        String secondMarr;
         boolean visited;
+        boolean marriedflag;
         int numcIds;
         /**
          *
