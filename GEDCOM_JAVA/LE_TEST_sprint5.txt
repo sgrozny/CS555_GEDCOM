@@ -1,0 +1,26 @@
+user story 30
+the age range between wife and husband must be less than 70! 
+
+============the age range between wife and husband must be less than 70! ============
+in the family 2,Angela's age is 115, but her husband Alfred's age is 14
+So the age range between husband and wife is 101 ,which is greater than 70!
+     Individual Record
+          ID: @lz-3-US10-AW@
+          Name: Angela
+          Gener: F
+          BirthDay: 19 MAY 1900
+          Death Date: null
+          Spouse to Family: @lz-3-US10-F2@
+          Child to Family: null
+     Individual Record
+          ID: @lz-3-US10-A@
+          Name: Alfred
+          Gener: M
+          BirthDay: 21 SEP 2001
+          Death Date: null
+          Spouse to Family: @lz-3-US10-F2@
+          Child to Family: @lz-3-US10-F1@
+-------------------------------
+
+***********************************************
+Total number of errors found was: 1
